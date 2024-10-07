@@ -1,0 +1,25 @@
+# Ignora la configuración de VSCode
+.vscode/
+
+# Ignora los archivos de git
+.git
+.gitignore
+
+# Archivos de logs
+*.log
+
+# Ignora Dockerfile si no es necesario
+Dockerfile
+
+# Ignora archivos temporales o de sistema
+*.swp
+*.tmp
+*.bak
+*.old
+*.DS_Store
+Thumbs.db
+
+# Ignora otros archivos innecesarios
+node_modules/
+npm-debug.log
+
