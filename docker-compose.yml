@@ -1,11 +1,11 @@
 version: '3.8'
 services:
-  portafolio:
+  portfolio:
     image: nginx:alpine3.20-slim
-    container_name: portafolio
-    hostname: portafolio
+    container_name: portfolio
+    hostname: portfolio
     volumes:
-      - ./nginx/:/usr/share/nginx
+      - /u/docker/docker-jenkins/jenkins-agent/workspace/CLIENT-avillalba/Enable/docker-portfolio/nginx:/usr/share/nginx
     deploy:
       resources:
         limits:
