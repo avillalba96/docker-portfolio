@@ -4,8 +4,8 @@ services:
     image: nginx:alpine3.20-slim
     container_name: portafolio
     hostname: portafolio
-    ports:
-      - "8081:80"
+    # ports:
+    #  - "8081:80"
     volumes:
       # - ./:/usr/share/nginx/html
       - ./index.html:/usr/share/nginx/html/index.html
@@ -18,3 +18,10 @@ services:
            cpus: '2'
            memory: 512M
     restart: unless-stopped
+    networks:
+      - npm-network
+
+networks:
+  npm-network:
+    name: npm-network
+    external: true

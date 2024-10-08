@@ -18,6 +18,8 @@ Dockerfile
 *.old
 *.DS_Store
 Thumbs.db
+docker-compose_dev.yml
+docker-compose.yml
 
 # Ignora otros archivos innecesarios
 node_modules/
