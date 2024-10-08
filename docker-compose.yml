@@ -5,7 +5,7 @@ services:
     container_name: portafolio
     hostname: portafolio
     volumes:
-      - ./nginx:/usr/share/nginx
+      - ./nginx/:/usr/share/nginx
     deploy:
       resources:
         limits:
