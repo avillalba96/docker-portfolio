@@ -4,19 +4,15 @@ services:
     image: nginx:alpine3.20-slim
     container_name: portafolio
     hostname: portafolio
-    # ports:
-    #  - "8081:80"
     volumes:
-      # - ./:/usr/share/nginx/html
-      - ./index.html:/usr/share/nginx/html/index.html
-      - ./script.js:/usr/share/nginx/html/script.js
+      - ./html:/usr/share/nginx/html
       - ./assets:/usr/share/nginx/html/assets
       - ./languages:/usr/share/nginx/html/languages
     deploy:
-       resources:
-         limits:
-           cpus: '2'
-           memory: 512M
+      resources:
+        limits:
+          cpus: '2'
+          memory: 512M
     restart: unless-stopped
     networks:
       - npm-network
