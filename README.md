@@ -14,8 +14,8 @@
 
 ## **Tareas**
 
-    - jenkins
-    - editar totalmente toda la info
-    - colores verde
-    - panel de console bash
-    - probar cada botooon
+    - Editar totalmente toda la info
+    - Colores verde
+    - Panel personalizado de console bash
+    - Probar cada apartado de home
+    - Verificar errores de hm y home, CORS e imagenes 404, etc etc
