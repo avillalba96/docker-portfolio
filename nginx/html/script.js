@@ -1,7 +1,5 @@
 const btn = document.getElementById('button');
 const sectionAll = document.querySelectorAll('section[id]');
-const inputName = document.querySelector('#nombre');
-const inputEmail = document.querySelector('#email');
 const flagsElement = document.getElementById('flags');
 const textsToChange = document.querySelectorAll('[data-section]');
 
@@ -10,7 +8,18 @@ window.addEventListener('load', () => {
     const contenedorLoader = document.querySelector('.container--loader');
     contenedorLoader.style.opacity = 0;
     contenedorLoader.style.visibility = 'hidden';
-})
+
+    // Cargar idioma por defecto (español si no hay otro guardado)
+    const savedLanguage = localStorage.getItem('language') || 'es';
+    
+    // Asegúrate de que el idioma se cargue al inicio
+    changeLanguage(savedLanguage).then(() => {
+        console.log(`Idioma ${savedLanguage} cargado por defecto.`);
+    }).catch(error => {
+        console.error('Error al cargar el idioma por defecto:', error);
+    });
+});
+
 
 /*===== Header =====*/
 window.addEventListener('scroll', () => {
@@ -25,8 +34,7 @@ btn.addEventListener('click', function() {
         this.classList.add('not-active');
         document.querySelector('.nav_menu').classList.remove('active');
         document.querySelector('.nav_menu').classList.add('not-active');
-    }
-    else {
+    } else {
         this.classList.add('active');
         this.classList.remove('not-active');
         document.querySelector('.nav_menu').classList.remove('not-active');
@@ -35,21 +43,44 @@ btn.addEventListener('click', function() {
 });
 
 /*===== Cambio de idioma =====*/
-const changeLanguage = async language => {
-    const requestJson = await fetch(`./languages/${language}.json`);
-    const texts = await requestJson.json();
+const changeLanguage = async (language) => {
+    try {
+        const requestJson = await fetch(`./languages/${language}.json`);
+        const texts = await requestJson.json();
 
-    for(const textToChange of textsToChange) {
-        const section = textToChange.dataset.section;
-        const value = textToChange.dataset.value;
+        // Verificar que los textos fueron cargados correctamente
+        if (!texts) {
+            console.error(`No se pudo cargar el archivo de idioma: ${language}`);
+            return;
+        }
+    
+        for (const textToChange of textsToChange) {
+            const section = textToChange.dataset.section;
+            const value = textToChange.dataset.value;
 
-        textToChange.innerHTML = texts[section][value];
+            // Verificar si existe el texto correspondiente en el JSON
+            if (texts[section] && texts[section][value]) {
+                textToChange.innerHTML = texts[section][value];
+            } else {
+                // Si el texto no existe en el JSON, mostrar un mensaje de error en la consola
+                textToChange.innerHTML = "Texto no disponible";
+                console.error(`Texto no encontrado para la sección ${section} y valor ${value} en ${language}.json`);
+            }
+        }
+
+        // Guardar el idioma seleccionado en localStorage
+        localStorage.setItem('language', language);
+    } catch (error) {
+        console.error('Error cargando el archivo de idioma:', error);
     }
-}
+};
 
+/*===== Cambiar idioma al hacer clic en la bandera =====*/
 flagsElement.addEventListener('click', (e) => {
-    changeLanguage(e.target.parentElement.dataset.language);
-})
+    if (e.target.parentElement.dataset.language) {
+        changeLanguage(e.target.parentElement.dataset.language);
+    }
+});
 
 /*===== class active por secciones =====*/
 window.addEventListener('scroll', () => {
@@ -61,8 +92,7 @@ window.addEventListener('scroll', () => {
 
         if (scrollY > sectionTop && scrollY < sectionTop + sectionHeight) {
             document.querySelector('nav a[href*=' + sectionId + ']').classList.add('active');
-        }
-        else {
+        } else {
             document.querySelector('nav a[href*=' + sectionId + ']').classList.remove('active');
         }
     });
@@ -72,11 +102,10 @@ window.addEventListener('scroll', () => {
 window.onscroll = function() {
     if (document.documentElement.scrollTop > 100) {
         document.querySelector('.go-top-container').classList.add('show');
-    }
-    else {
+    } else {
         document.querySelector('.go-top-container').classList.remove('show');
     }
-}
+};
 
 document.querySelector('.go-top-container').addEventListener('click', () => {
     window.scrollTo({

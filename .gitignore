@@ -8,7 +8,6 @@ node_modules/
 npm-debug.log
 yarn-debug.log
 yarn-error.log
-docker-compose_dev.yml
 
 # Ignorar archivos de logs
 *.log
@@ -26,3 +25,7 @@ Thumbs.db
 *.swp
 *.old
 
+# Otros - Personalizados
+*_disable
+*secret*
+docker-compose_dev.yml

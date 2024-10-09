@@ -14,8 +14,9 @@
 
 ## **Tareas**
 
-    - Editar totalmente toda la info
+    - Editar totalmente toda la info personal
     - Colores verde
+    - Editar imagenes y/ signos de mujer
     - Panel personalizado de console bash
     - Probar cada apartado de home
     - Verificar errores de hm y home, CORS e imagenes 404, etc etc
