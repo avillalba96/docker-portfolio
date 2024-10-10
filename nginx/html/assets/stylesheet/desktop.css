@@ -23,9 +23,9 @@ nav.nav_menu a {
 
 nav.nav_menu a:hover,
 nav.nav_menu a.active {
-    color: var(--beaver);
+    color: #00FF00;
     padding: .5rem;
-    border-bottom: 1px solid var(--beaver);
+    border-bottom: 1px solid #00FF00;
     transition: all .5s;
 }
 
@@ -73,8 +73,14 @@ div.btn {
 }
 
 .home_info {
-    width: 40%;
-    padding-left: 6rem;
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Cambia "center" por "flex-start" */
+    justify-content: flex-start; /* Alinea los elementos al inicio */
+    text-align: left; /* Asegura que el texto se alinee a la izquierda */
+    margin-left: 0; /* Elimina cualquier margen izquierdo */
+    padding-left: 0; /* Elimina cualquier padding izquierdo */
 }
 
 .container_text-info {
@@ -106,9 +112,12 @@ div.btn {
 }
 
 .container_parrafo-info {
-    display: inline-block;
-    text-align: start;
+    display: block; /* Cambia de 'none' a 'block' para mostrar el contenido */
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+    margin-left: 0; /* Elimina cualquier margen adicional */
+    padding-left: 0; /* Elimina cualquier padding izquierdo */
 }
+
 
 .container_parrafo-info p {
     font-family: 'Cooper Hewitt';
@@ -122,23 +131,10 @@ div.btn {
     display: flex;
 }
 
-.cv_button {
-    background: none;
-    color: var(--beaver);
-    border: 1px solid var(--beaver);
-    margin-right: 1rem;
-    transition: .2s;
-}
-
-.cv_button:hover {
-    background: var(--black);
-    box-shadow: 0px 2px 10px #141414;
-    transition: 1s transform;
-}
-
+/* Contacto */
 .contact_button {
     display: inline-block;
-    background-color: var(--beaver);
+    background-color: #00FF00; /* Verde */
     border-radius: 3rem;
     padding: .7rem 4rem .6rem 4rem;
     color: var(--jet);
@@ -154,10 +150,12 @@ div.btn {
 }
 
 .contact_button:hover {
-    background-color: #776254;
+    background-color: #3e473e;
     box-shadow: 0px 2px 10px #141414;
     transition: 1s transform;
 }
+
+/* Links y Redes Sociales */
 
 .links {
     width: 5%;
@@ -214,26 +212,6 @@ div.btn {
     position: relative;
 }
 
-.habilidades h1 {
-    padding-top: 8rem;
-    font-size: 3rem;
-}
-
-.puntos1-habilidades {
-    display: inline;
-    position: absolute;
-    width: 6rem;
-    margin: 15rem 0 0 /* 41rem */ 20%;
-    background-attachment: fixed;
-}
-
-.puntos2-habilidades {
-    display: inline;
-    position: absolute;
-    width: 6rem;
-    margin: 0 0 0 76%;
-}
-
 .cards_container--habilidades {
     grid-template-columns: 13rem 13rem 13rem 13rem;
     grid-template-rows: 14rem 14rem;
@@ -252,45 +230,11 @@ div.btn {
     margin-top: .8rem;
 }
 
-/* Formación */
-
-.formacion {
-    padding-bottom: 2rem;
-    position: relative;
-}
-
-.formacion h1 {
-    padding-top: 8rem;
-    font-size: 3rem;
-}
-
-.cards--formacion:hover {
-    border: 1px solid var(--beaver);
-    box-shadow: 0 10px 16px -6px rgb(5 5 5 / 30%), 0 25px 10px -24px rgb(5 5 5 / 10%);
-    transform: scale(1.1);
-    transition: .4s all;
-}
-
 /* Proyectos */
 
 .proyectos h1 {
     padding-top: 8rem;
     font-size: 3rem;
-}
-
-.puntos1-proyectos {
-    display: inline;
-    position: absolute;
-    width: 6rem;
-    margin: 20rem 0 0  1%;
-    background-attachment: fixed;
-}
-
-.puntos2-proyectos {
-    display: inline;
-    position: absolute;
-    width: 6rem;
-    margin: -3rem 0 0 93%;
 }
 
 .cards_container--proyectos {
@@ -343,8 +287,35 @@ div.btn {
     object-fit: contain;
 }
 
+/* Cambiar color de fondo de la sección contacto */
 .container--contacto {
-    width: 50%;
-    margin: 0;
-    padding: 4rem 3rem;
+    background-color: #000000;
+    border-radius: 24px;
+    padding: 3rem;
+    position: relative;
+}
+
+/* Cambiar colores de los botones */
+.btn_form--contacto button {
+    background: #00FF00;
+    border: none;
+    font-family: 'Cooper Hewitt';
+    width: 20rem;
+    padding: .8rem 1rem;
+    border-radius: 1rem;
+    color: #000000;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 1s all;
+}
+
+/* Hover para que el botón sea más visible */
+.btn_form--contacto button:hover {
+    background: #00CC00;
+    color: #000000;
+    font-weight: bold;
+    transform: scale(1.1);
+    box-shadow: 0px 9px 15px -1px rgba(0,255,0,0.75);
+    transition: all .4s ease;
 }

@@ -15,9 +15,10 @@
     <!-- Hojas de estilo -->
     <link rel="stylesheet" href="./assets/stylesheet/loader.css">
     <link rel="stylesheet" href="./assets/stylesheet/index.css">
-    <link rel="stylesheet" href="./assets/stylesheet/tablet.css" media="screen and (min-width: 760px)">
-    <link rel="stylesheet" href="./assets/stylesheet/desktop.css" media="screen and (min-width: 980px)">
-
+    <link rel="stylesheet" href="./assets/stylesheet/mobile.css"> 
+    <link rel="stylesheet" href="./assets/stylesheet/tablet.css">
+    <link rel="stylesheet" href="./assets/stylesheet/desktop.css">    
+    
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +40,7 @@
         <img src="./assets/images/logo-ma.png" alt="Logo Portafolio" class="logo__header">
 
         <nav class="nav_menu not-active">
-            <a href="#home" class="active" data-section="menu" data-value="item2"></a>
+            <a href="#home" class="active" data-section="menu" data-value="item1"></a>
             <a href="#sobreMi" data-section="menu" data-value="item2"></a>
             <a href="#habilidades" data-section="menu" data-value="item3"></a>
             <a href="#proyectos" data-section="menu" data-value="item4"></a>
@@ -64,7 +65,7 @@
     </header>
 
     <main>
-        <!-- Home -->
+        <!-- Home -->        
         <section class="home" id="home">
             <picture class="container_image-home" data-aos="zoom-in">
                 <img class="image_home" src="./assets/images/image-home.png" alt="Ilustración">
@@ -75,15 +76,18 @@
                     <p class="home_text-1" data-section="home" data-value="home_text-1"></p>
                     <p class="home_text-2" data-section="home" data-value="home_text-2"></p>
                 </div>
-
-                <div>
-                    <p class="home_text-3 text-type" data-section="home" data-value="home_text-3"></p>
-                </div>
-
-                <div class="container_parrafo-info">
-                    <p data-section="home" data-value="parrafo-info"></p>
-                </div>
-
+        
+                <div class="texto_bash">
+                    <p class="direccion_bash">
+                        <span class="user-info">alejandro@kali</span> 
+                        <span class="dir-info">~/portafolio</span> 
+                        <span class="branch-status">(main)</span><span class="t-caret_bash">•</span>
+                    </p>
+                    <p class="descripcion_bash">
+                        <span id="typewriter_bash"></span>
+                    </p>
+                </div>                       
+        
                 <div class="container_button">
                     <a id="cv-link" href="" target="_blank">
                         <button class="cv_button" data-section="home" data-value="cv_button"></button>
@@ -93,7 +97,7 @@
                     </a>
                 </div>
             </div>
-
+        
             <div class="links">
                 <a href="https://www.linkedin.com/in/avillalba96/" target="_blank">
                     <img src="./assets/images/icon-linkedin.png" alt="LinkedIn" class="icon-linkedin">
@@ -102,7 +106,7 @@
                     <img src="./assets/images/icon-github.png" alt="GitHub" class="icon-github">
                 </a>
             </div>
-        </section>
+        </section>        
 
         <!-- Sobre mí -->
         <section class="sobreMi" id="sobreMi">
@@ -118,53 +122,75 @@
                 </picture>
             </div>
         </section>
-
+        
         <!-- Habilidades -->
         <section class="habilidades" id="habilidades">
             <h1 data-section="habilidades" data-value="title" data-aos="fade-up"></h1>
-
-            <img src="./assets/images/puntos.png" alt="Decoración puntos" class="puntos1-habilidades">
-            <img src="./assets/images/puntos.png" alt="Decoración puntos" class="puntos2-habilidades">
-
+        
             <div class="cards_container--habilidades">
                 <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
-                    <img src="./assets/images/icon-html.png" alt="HTML">
+                    <img src="https://skillicons.dev/icons?i=linux" alt="Linux">
                     <p data-section="habilidades" data-value="skill1"></p>
                 </div>
-                
-                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="700">
-                    <img src="./assets/images/icon-css.png" alt="CSS">
+                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                    <img src="https://skillicons.dev/icons?i=docker" alt="Docker">
                     <p data-section="habilidades" data-value="skill2"></p>
                 </div>
-
-                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="900">
-                    <img src="./assets/images/icon-js.png" alt="JavaScript">
+                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                    <img src="https://skillicons.dev/icons?i=kubernetes" alt="Kubernetes">
                     <p data-section="habilidades" data-value="skill3"></p>
                 </div>
-
-                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="1100">
-                    <img src="./assets/images/icon-Notion.png" alt="Notion">
+                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                    <img src="https://skillicons.dev/icons?i=terraform" alt="Terraform">
                     <p data-section="habilidades" data-value="skill4"></p>
                 </div>
-
                 <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
-                    <img src="./assets/images/icon-tailwind.png" alt="Tailwind">
+                    <img src="https://skillicons.dev/icons?i=ansible" alt="Ansible">
                     <p data-section="habilidades" data-value="skill5"></p>
                 </div>
-
-                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="700">
-                    <img src="./assets/images/icon-git.png" alt="Git">
+                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                    <img src="https://skillicons.dev/icons?i=jenkins" alt="Jenkins">
                     <p data-section="habilidades" data-value="skill6"></p>
                 </div>
-                
-                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="900">
-                    <img src="./assets/images/icon-github-hab.png" alt="GitHub">
+                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                    <img src="https://skillicons.dev/icons?i=aws" alt="AWS">
                     <p data-section="habilidades" data-value="skill7"></p>
                 </div>
-
-                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="1100">
-                    <img src="./assets/images/icon-trello.png" alt="Trello">
+                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                    <img src="https://skillicons.dev/icons?i=git" alt="Git">
                     <p data-section="habilidades" data-value="skill8"></p>
+                </div>
+                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                    <img src="https://skillicons.dev/icons?i=zabbix" alt="Zabbix">
+                    <p data-section="habilidades" data-value="skill9"></p>
+                </div>
+                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                    <img src="https://skillicons.dev/icons?i=grafana" alt="Grafana">
+                    <p data-section="habilidades" data-value="skill10"></p>
+                </div>
+                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                    <img src="https://skillicons.dev/icons?i=proxmox" alt="Proxmox">
+                    <p data-section="habilidades" data-value="skill11"></p>
+                </div>
+                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                    <img src="https://skillicons.dev/icons?i=vmware" alt="VMware">
+                    <p data-section="habilidades" data-value="skill12"></p>
+                </div>
+                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                    <img src="https://skillicons.dev/icons?i=bash" alt="Bash">
+                    <p data-section="habilidades" data-value="skill13"></p>
+                </div>
+                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                    <img src="https://skillicons.dev/icons?i=python" alt="Python">
+                    <p data-section="habilidades" data-value="skill14"></p>
+                </div>
+                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                    <img src="https://skillicons.dev/icons?i=vim" alt="Vim">
+                    <p data-section="habilidades" data-value="skill15"></p>
+                </div>
+                <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                    <img src="https://skillicons.dev/icons?i=linux" alt="Pentesting">
+                    <p data-section="habilidades" data-value="skill16"></p>
                 </div>
             </div>
         </section>
@@ -173,78 +199,25 @@
         <section class="proyectos" id="proyectos">
             <h1 data-section="proyectos" data-value="title" data-aos="fade-up"></h1>
 
-            <img src="./assets/images/puntos.png" alt="Decoración puntos" class="puntos1-proyectos">
-            <img src="./assets/images/puntos.png" alt="Decoración puntos" class="puntos2-proyectos">
-
             <div class="cards_container--proyectos">
-                <div class="cards--proyectos card_JuegoAhorcado" data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
-                    <div class="container_imgCard--proyectos">
-                        <img src="./assets/images/cap-juegoAhorcado.png" alt="Proyecto: Juego del ahorcado">
-                    </div>
-
-                    <div class="container_textCard--proyectos">
-                        <h2 data-section="proyectos" data-value="title-proyecto1"></h2>
-                        <p data-section="proyectos" data-value="info-proyecto1"></p>
-                    </div>
-
-                    <div class="container_btn--proyectos">
-                        <a href="https://mariasmoun.github.io/Juego-del-Ahorcado/" target="_blank">
-                            <button class="btn_demo">
-                                <img src="./assets/images/icon-demoProyecto.png" alt="Demostración">DEMO
-                            </button>
-                        </a>
-
-                        <a href="https://github.com/mariasmoUN/Juego-del-Ahorcado" target="_blank">
-                            <button class="btn_repo">
-                                <img src="./assets/images/icon-githubProyecto.png" alt="Repositorio de github">REPO
-                            </button>
-                        </a>
-                    </div>
-                </div>
-
                 <div class="cards--proyectos card_portafolio" data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
                     <div class="container_imgCard--proyectos">
                         <img src="./assets/images/cap-portafolio.png" alt="Proyecto: Portafolio">
                     </div>
 
                     <div class="container_textCard--proyectos text-portafolio">
-                        <h2 data-section="proyectos" data-value="title-proyecto2"></h2>
-                        <p data-section="proyectos" data-value="info-proyecto2"></p>
+                        <h2 data-section="proyectos" data-value="title-proyecto1"></h2>
+                        <p data-section="proyectos" data-value="info-proyecto1"></p>
                     </div>
 
                     <div class="container_btn--proyectos">
-                        <a href="#" target="_blank">
+                        <a href="https://home.avillalba.com.ar/" target="_blank">
                             <button class="btn_demo">
                                 <img src="./assets/images/icon-demoProyecto.png" alt="Demostración">DEMO
                             </button>
                         </a>
 
-                        <a href="https://github.com/mariasmoUN/portafolio" target="_blank">
-                            <button class="btn_repo">
-                                <img src="./assets/images/icon-githubProyecto.png" alt="Repositorio de github">REPO
-                            </button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="cards--proyectos card_encriptador" data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
-                    <div class="container_imgCard--proyectos">
-                        <img src="./assets/images/cap-encriptador.png" alt="Proyecto: Encriptador">
-                    </div>
-
-                    <div class="container_textCard--proyectos">
-                        <h2 data-section="proyectos" data-value="title-proyecto3"></h2>
-                        <p data-section="proyectos" data-value="info-proyecto3"></p>
-                    </div>
-
-                    <div class="container_btn--proyectos">
-                        <a href="https://mariasmoun.github.io/Encriptador-de-texto/" target="_blank">
-                            <button class="btn_demo">
-                                <img src="./assets/images/icon-demoProyecto.png" alt="Demostración">DEMO
-                            </button>
-                        </a>
-
-                        <a href="https://github.com/mariasmoUN/Encriptador-de-texto" target="_blank">
+                        <a href="https://github.com/avillalba96/docker-portafolio" target="_blank">
                             <button class="btn_repo">
                                 <img src="./assets/images/icon-githubProyecto.png" alt="Repositorio de github">REPO
                             </button>

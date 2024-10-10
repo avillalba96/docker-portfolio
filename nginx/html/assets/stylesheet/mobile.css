@@ -1,0 +1,38 @@
+/* mobile.css */
+@media screen and (max-width: 760px) {
+    /* Ajustes para pantallas móviles */
+    .home_text-1 {
+      font-size: 1.8rem;
+    }
+  
+    .home_text-2 {
+      font-size: 2.8rem;
+    }
+  
+    /* Ajusta los proyectos para ocupar el 100% del ancho en móviles */
+    .cards--proyectos {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  
+    /* Ajusta las imágenes */
+    .container_imgCard--proyectos img {
+      width: 100%;
+      height: auto;
+    }
+  
+    /* Ajusta botones */
+    .container_btn--proyectos button {
+      width: 100%;
+      margin: 0.5rem 0;
+    }
+  
+    /* Ajusta la sección de contacto */
+    .container--contacto {
+      width: 100%;
+      padding: 1rem;
+    }
+  
+    /* Otros estilos para móviles */
+  }
+  

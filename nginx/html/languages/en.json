@@ -1,5 +1,6 @@
 {
     "menu": {
+        "item1": "Home",
         "item2": "About me",
         "item3": "Skills",
         "item4": "Projects",
@@ -7,46 +8,51 @@
     },
     "home": {
         "home_text-1": "Hi! I'm",
-        "home_text-2": "Alejandro Villalba | DevOps",
-        "home_text-3": "DevOps",
-        "parrafo-info": "I am a DevOps Engineer with experience...",
+        "home_text-2": "Alejandro Villalba | DevOps Engineer",
+        "home_text-3": "DevOps Engineer",
+        "parrafo-info": "I am a DevOps Engineer with experience in managing, automating, and networking infrastructures using tools like Docker, Kubernetes, and Terraform. I specialize in system stability, security, and scalability, as well as advanced network management. I also have a deep interest in cybersecurity and pentesting, allowing me to optimize infrastructures from a security-first perspective. My passion for continuous process improvement and sharing knowledge with the community is a key aspect of my career.",
         "cv_button": "Download CV",
-        "contact_button": "Contact"
+        "contact_button": "Contact me",
+        "cv_link": "https://drive.google.com/file/d/1oQJxS9UnntNnT_hqgCm-7cZlwYQ6_syi/view?usp=sharing"
     },
     "sobre-mi": {
         "title": "About me",
-        "texto_sobreMi": "I am a DevOps Engineer with experience..."
+        "texto_sobreMi": "I am a DevOps Engineer specializing in automating infrastructures and managing cloud environments. My focus is on ensuring system efficiency, scalability, and security using modern tools like Docker, Kubernetes, and Terraform. I also have a strong interest in network management, allowing me to optimize and secure infrastructure from a comprehensive perspective. Passionate about collaborative work, I am always seeking new technologies and methods to improve processes. My deep interest in cybersecurity drives me to implement protection measures at every stage of development and deployment."
     },
     "habilidades": {
         "title": "Skills",
-        "skill1": "HTML 5",
-        "skill2": "CSS 3",
-        "skill3": "JavaScript",
-        "skill4": "Notion",
-        "skill5": "Tailwind",
-        "skill6": "Git",
-        "skill7": "GitHub",
-        "skill8": "Trello"
+        "skill1": "Linux",
+        "skill2": "Docker",
+        "skill3": "Kubernetes",
+        "skill4": "Terraform",
+        "skill5": "Ansible",
+        "skill6": "Jenkins",
+        "skill7": "AWS",
+        "skill8": "Git",
+        "skill9": "Zabbix",
+        "skill10": "Grafana",
+        "skill11": "Proxmox",
+        "skill12": "VMware",
+        "skill13": "Bash",
+        "skill14": "Python",
+        "skill15": "Vim",
+        "skill16": "Pentesting"
     },
     "proyectos": {
         "title": "Projects",
-        "title-proyecto1": "Hangman Game",
-        "info-proyecto1": "A game where the user must guess...",
-        "title-proyecto2": "Portfolio",
-        "info-proyecto2": "My personal web portfolio...",
-        "title-proyecto3": "Text Encryptor",
-        "info-proyecto3": "An encryptor where the user can write..."
+        "title-proyecto1": "Portfolio",
+        "info-proyecto1": "My personal web portfolio..."
     },
     "contacto": {
         "title": "Contact",
-        "text": "Complete the following form...",
-        "placeholder-name": "Name",
-        "placeholder-email": "E-mail",
+        "text": "Fill out the form below and I will get in touch with you as soon as possible.",
+        "placeholder-name": "Your name",
+        "placeholder-email": "Your email",
         "placeholder-subject": "Subject",
-        "placeholder-message": "Message",
-        "btn-enviar": "Send"
+        "placeholder-message": "Write your message here",
+        "btn-enviar": "Send message"
     },
     "footer": {
-        "text-footer": "Copyright © | Coded with 💖 by Alejandro Villalba"
+        "text-footer": "Copyright © | Coded by 🐛 Alejandro Villalba 🐛"
     }
 }

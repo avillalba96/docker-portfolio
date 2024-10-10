@@ -2,6 +2,72 @@ const btn = document.getElementById('button');
 const sectionAll = document.querySelectorAll('section[id]');
 const flagsElement = document.getElementById('flags');
 const textsToChange = document.querySelectorAll('[data-section]');
+const cvLink = document.getElementById('cv-link');
+let index = 0;
+const speed = 25;  // Velocidad de escritura en milisegundos
+let isTyping = false;  // Bandera para evitar múltiples ejecuciones
+let typewriterTimeout; // Variable para guardar el timeout de escritura
+
+// Función para el efecto de escritura
+function typewriter_bash(text) {
+    const typewriterElement = document.getElementById("typewriter_bash");
+
+    if (index < text.length) {
+        typewriterElement.textContent += text.charAt(index);
+        index++;
+        typewriterTimeout = setTimeout(() => typewriter_bash(text), speed);
+    } else {
+        isTyping = false;  // Resetea la bandera cuando termina de escribir
+    }
+}
+
+// Reiniciar el efecto de escritura
+function resetTypewriter() {
+    clearTimeout(typewriterTimeout); // Limpiar cualquier timeout previo
+    index = 0; // Reiniciar el índice
+    document.getElementById("typewriter_bash").textContent = ''; // Limpiar el texto
+}
+
+// Modificación en la función de cambio de idioma para reiniciar el efecto de escritura
+const changeLanguage = async (language) => {
+    try {
+        const requestJson = await fetch(`./languages/${language}.json`);
+        const texts = await requestJson.json();
+
+        if (!texts) {
+            console.error(`No se pudo cargar el archivo de idioma: ${language}`);
+            return;
+        }
+
+        // Actualizar el contenido de la página según el idioma seleccionado
+        for (const textToChange of textsToChange) {
+            const section = textToChange.dataset.section;
+            const value = textToChange.dataset.value;
+
+            if (textToChange.tagName === "INPUT" || textToChange.tagName === "TEXTAREA") {
+                textToChange.setAttribute("placeholder", texts[section][value]);
+            } else {
+                textToChange.innerHTML = texts[section][value];
+            }
+        }
+
+        // Actualiza el enlace del CV
+        if (texts.home && texts.home.cv_link) {
+            cvLink.href = texts.home.cv_link;
+        }
+
+        // Reiniciar el efecto de escritura y comenzar a escribir el nuevo texto traducido
+        if (texts.home && texts.home["parrafo-info"]) {
+            resetTypewriter(); // Reinicia la escritura y limpia el texto previo
+            isTyping = true;  // Marca que está escribiendo
+            typewriter_bash(texts.home["parrafo-info"]); // Escribe el nuevo texto traducido
+        }
+
+        localStorage.setItem('language', language);
+    } catch (error) {
+        console.error('Error cargando el archivo de idioma:', error);
+    }
+};
 
 /* ===== Loader =====*/
 window.addEventListener('load', () => {
@@ -19,7 +85,6 @@ window.addEventListener('load', () => {
         console.error('Error al cargar el idioma por defecto:', error);
     });
 });
-
 
 /*===== Header =====*/
 window.addEventListener('scroll', () => {
@@ -41,39 +106,6 @@ btn.addEventListener('click', function() {
         document.querySelector('.nav_menu').classList.add('active');
     }
 });
-
-/*===== Cambio de idioma =====*/
-const changeLanguage = async (language) => {
-    try {
-        const requestJson = await fetch(`./languages/${language}.json`);
-        const texts = await requestJson.json();
-
-        // Verificar que los textos fueron cargados correctamente
-        if (!texts) {
-            console.error(`No se pudo cargar el archivo de idioma: ${language}`);
-            return;
-        }
-    
-        for (const textToChange of textsToChange) {
-            const section = textToChange.dataset.section;
-            const value = textToChange.dataset.value;
-
-            // Verificar si existe el texto correspondiente en el JSON
-            if (texts[section] && texts[section][value]) {
-                textToChange.innerHTML = texts[section][value];
-            } else {
-                // Si el texto no existe en el JSON, mostrar un mensaje de error en la consola
-                textToChange.innerHTML = "Texto no disponible";
-                console.error(`Texto no encontrado para la sección ${section} y valor ${value} en ${language}.json`);
-            }
-        }
-
-        // Guardar el idioma seleccionado en localStorage
-        localStorage.setItem('language', language);
-    } catch (error) {
-        console.error('Error cargando el archivo de idioma:', error);
-    }
-};
 
 /*===== Cambiar idioma al hacer clic en la bandera =====*/
 flagsElement.addEventListener('click', (e) => {

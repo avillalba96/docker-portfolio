@@ -1,5 +1,6 @@
 {
     "menu": {
+        "item1": "Inicio",
         "item2": "Sobre mí",
         "item3": "Habilidades",
         "item4": "Proyectos",
@@ -7,46 +8,51 @@
     },
     "home": {
         "home_text-1": "Hola! Soy",
-        "home_text-2": "Alejandro Villalba | DevOps",
-        "home_text-3": "DevOps",
-        "parrafo-info": "Soy Ingeniero DevOps con experiencia en la gestión y automatización de infraestructura...",
+        "home_text-2": "Alejandro Villalba | Ingeniero DevOps",
+        "home_text-3": "Ingeniero DevOps",
+        "parrafo-info": "Soy Ingeniero DevOps con experiencia en la gestión, automatización y redes de infraestructuras utilizando herramientas como Docker, Kubernetes y Terraform. Me especializo en la estabilidad, seguridad y escalabilidad de los sistemas, además de la gestión avanzada de redes. También tengo un profundo interés en la ciberseguridad y el pentesting, lo que me permite optimizar infraestructuras desde una perspectiva segura. Mi pasión por la mejora continua de los procesos y el intercambio de conocimientos con la comunidad es una parte esencial de mi carrera.",
         "cv_button": "Descargar CV",
-        "contact_button": "Contacto"
+        "contact_button": "Contáctame",
+        "cv_link": "https://drive.google.com/file/d/1oQJxS9UnntNnT_hqgCm-7cZlwYQ6_syi/view?usp=sharing"        
     },
     "sobre-mi": {
         "title": "Sobre mí",
-        "texto_sobreMi": "Soy Ingeniero DevOps con experiencia en automatización..."
+        "texto_sobreMi": "Soy Ingeniero DevOps especializado en la automatización de infraestructuras y la administración de entornos en la nube. Mi enfoque se centra en garantizar la eficiencia, escalabilidad y seguridad de los sistemas, utilizando herramientas como Docker, Kubernetes y Terraform. También tengo un fuerte interés en la gestión de redes, lo que me permite optimizar y asegurar la infraestructura desde una perspectiva integral. Apasionado por el trabajo colaborativo, siempre busco nuevas tecnologías y métodos que mejoren los procesos. Mi interés por la ciberseguridad me impulsa a aplicar medidas de protección en todas las etapas del desarrollo y despliegue."
     },
     "habilidades": {
         "title": "Habilidades",
-        "skill1": "HTML 5",
-        "skill2": "CSS 3",
-        "skill3": "JavaScript",
-        "skill4": "Notion",
-        "skill5": "Tailwind",
-        "skill6": "Git",
-        "skill7": "GitHub",
-        "skill8": "Trello"
+        "skill1": "Linux",
+        "skill2": "Docker",
+        "skill3": "Kubernetes",
+        "skill4": "Terraform",
+        "skill5": "Ansible",
+        "skill6": "Jenkins",
+        "skill7": "AWS",
+        "skill8": "Git",
+        "skill9": "Zabbix",
+        "skill10": "Grafana",
+        "skill11": "Proxmox",
+        "skill12": "VMware",
+        "skill13": "Bash",
+        "skill14": "Python",
+        "skill15": "Vim",
+        "skill16": "Pentesting"
     },
     "proyectos": {
         "title": "Proyectos",
-        "title-proyecto1": "Juego del Ahorcado",
-        "info-proyecto1": "Un juego donde el usuario debe adivinar...",
-        "title-proyecto2": "Portafolio",
-        "info-proyecto2": "Mi portafolio web personal...",
-        "title-proyecto3": "Encriptador de Texto",
-        "info-proyecto3": "Un encriptador donde el usuario puede escribir..."
+        "title-proyecto1": "Portafolio",
+        "info-proyecto1": "Mi portafolio web personal..."
     },
     "contacto": {
         "title": "Contacto",
-        "text": "Completa el siguiente formulario...",
-        "placeholder-name": "Nombre",
-        "placeholder-email": "Correo Electrónico",
+        "text": "Rellena el formulario a continuación y me pondré en contacto contigo lo antes posible.",
+        "placeholder-name": "Tu nombre",
+        "placeholder-email": "Tu correo electrónico",
         "placeholder-subject": "Asunto",
-        "placeholder-message": "Mensaje",
-        "btn-enviar": "Enviar"
+        "placeholder-message": "Escribe tu mensaje aquí",
+        "btn-enviar": "Enviar mensaje"
     },
     "footer": {
-        "text-footer": "Copyright © | Programado con 💖 por Alejandro Villalba"
+        "text-footer": "Copyright © | Programado por 🐛 Alejandro Villalba 🐛"
     }
 }
