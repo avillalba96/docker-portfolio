@@ -1,0 +1,91 @@
+/* Estilos para el botón de hamburguesa en pantallas pequeñas */
+@media (max-width: 768px) {
+    .hamburger-btn {
+        display: block;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .hamburger-btn span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+    }
+
+    .nav_menu {
+        display: none;
+    }
+
+    .nav_menu.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        z-index: 999;
+        padding: 1rem;
+    }
+
+    .nav_menu a {
+        padding: 1rem;
+        color: #fff;
+        text-align: center;
+    }
+
+    .nav_menu a:hover {
+        background-color: #0f0;
+    }
+
+    .cards_container--habilidades {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas móviles */
+        grid-gap: 1rem; /* Espacio entre tarjetas */
+        justify-items: center; /* Centrar las tarjetas */
+    }
+
+    .cards--habilidades {
+        width: 100px; /* Ajustar el tamaño de las tarjetas */
+        height: 100px;
+    }
+
+    .cards--habilidades img {
+        width: 50px; /* Ajustar el tamaño de los iconos */
+    }
+
+    .cards--habilidades p {
+        font-size: 1.2rem; /* Reducir el tamaño del texto en pantallas móviles */
+    }    
+    .home {
+        flex-direction: row-reverse;
+        height: auto;
+        text-align: left;
+    }
+
+    .container_image-home {
+        width: 55%;
+        padding-right: 4rem;
+    }
+
+    .home_info {
+        width: 45%;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .container_button {
+        flex-direction: row;
+    }
+
+    .cv_button, .contact_button {
+        width: auto;
+        margin-bottom: 0;
+        margin-right: 1rem;
+    }
+}

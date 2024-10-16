@@ -1,12 +1,14 @@
-const btn = document.getElementById('button');
 const sectionAll = document.querySelectorAll('section[id]');
 const flagsElement = document.getElementById('flags');
 const textsToChange = document.querySelectorAll('[data-section]');
 const cvLink = document.getElementById('cv-link');
+const goTopContainer = document.querySelector('.go-top-container'); 
+const hamburgerBtn = document.getElementById('hamburger-btn'); // Botón de hamburguesa
+const navMenu = document.querySelector('.nav_menu'); // Menú de navegación
+const navLinks = document.querySelectorAll('.nav_menu a'); // Seleccionar todos los enlaces del menú
 let index = 0;
-const speed = 25;  // Velocidad de escritura en milisegundos
-let isTyping = false;  // Bandera para evitar múltiples ejecuciones
-let typewriterTimeout; // Variable para guardar el timeout de escritura
+const speed = 25;  
+let typewriterTimeout; 
 
 // Función para el efecto de escritura
 function typewriter_bash(text) {
@@ -15,32 +17,26 @@ function typewriter_bash(text) {
     if (index < text.length) {
         typewriterElement.textContent += text.charAt(index);
         index++;
+        const textoBashContainer = document.querySelector('.texto_bash');
+        textoBashContainer.style.height = 'auto';  
         typewriterTimeout = setTimeout(() => typewriter_bash(text), speed);
-    } else {
-        isTyping = false;  // Resetea la bandera cuando termina de escribir
     }
 }
 
 // Reiniciar el efecto de escritura
 function resetTypewriter() {
-    clearTimeout(typewriterTimeout); // Limpiar cualquier timeout previo
-    index = 0; // Reiniciar el índice
-    document.getElementById("typewriter_bash").textContent = ''; // Limpiar el texto
+    clearTimeout(typewriterTimeout); 
+    index = 0; 
+    document.getElementById("typewriter_bash").textContent = ''; 
 }
 
-// Modificación en la función de cambio de idioma para reiniciar el efecto de escritura
+// Función para cambiar de idioma
 const changeLanguage = async (language) => {
     try {
         const requestJson = await fetch(`./languages/${language}.json`);
         const texts = await requestJson.json();
 
-        if (!texts) {
-            console.error(`No se pudo cargar el archivo de idioma: ${language}`);
-            return;
-        }
-
-        // Actualizar el contenido de la página según el idioma seleccionado
-        for (const textToChange of textsToChange) {
+        textsToChange.forEach(textToChange => {
             const section = textToChange.dataset.section;
             const value = textToChange.dataset.value;
 
@@ -49,18 +45,15 @@ const changeLanguage = async (language) => {
             } else {
                 textToChange.innerHTML = texts[section][value];
             }
-        }
+        });
 
-        // Actualiza el enlace del CV
         if (texts.home && texts.home.cv_link) {
             cvLink.href = texts.home.cv_link;
         }
 
-        // Reiniciar el efecto de escritura y comenzar a escribir el nuevo texto traducido
         if (texts.home && texts.home["parrafo-info"]) {
-            resetTypewriter(); // Reinicia la escritura y limpia el texto previo
-            isTyping = true;  // Marca que está escribiendo
-            typewriter_bash(texts.home["parrafo-info"]); // Escribe el nuevo texto traducido
+            resetTypewriter(); 
+            typewriter_bash(texts.home["parrafo-info"]);
         }
 
         localStorage.setItem('language', language);
@@ -75,36 +68,28 @@ window.addEventListener('load', () => {
     contenedorLoader.style.opacity = 0;
     contenedorLoader.style.visibility = 'hidden';
 
-    // Cargar idioma por defecto (español si no hay otro guardado)
     const savedLanguage = localStorage.getItem('language') || 'es';
-    
-    // Asegúrate de que el idioma se cargue al inicio
-    changeLanguage(savedLanguage).then(() => {
-        console.log(`Idioma ${savedLanguage} cargado por defecto.`);
-    }).catch(error => {
-        console.error('Error al cargar el idioma por defecto:', error);
-    });
+    changeLanguage(savedLanguage);
 });
 
-/*===== Header =====*/
+/*===== Mostrar/Ocultar el botón de "ir arriba" y el cambio de clase en el header =====*/
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     header.classList.toggle('abajo', window.scrollY > 0);
+
+    if (window.scrollY > 100) {
+        goTopContainer.classList.add('show');
+    } else {
+        goTopContainer.classList.remove('show');
+    }
 });
 
-/*===== Boton Menu =====*/
-btn.addEventListener('click', function() {
-    if (this.classList.contains('active')) {
-        this.classList.remove('active');
-        this.classList.add('not-active');
-        document.querySelector('.nav_menu').classList.remove('active');
-        document.querySelector('.nav_menu').classList.add('not-active');
-    } else {
-        this.classList.add('active');
-        this.classList.remove('not-active');
-        document.querySelector('.nav_menu').classList.remove('not-active');
-        document.querySelector('.nav_menu').classList.add('active');
-    }
+/*===== Botón y función ir arriba =====*/
+goTopContainer.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
 
 /*===== Cambiar idioma al hacer clic en la bandera =====*/
@@ -130,18 +115,14 @@ window.addEventListener('scroll', () => {
     });
 });
 
-/*===== Boton y función ir arriba =====*/
-window.onscroll = function() {
-    if (document.documentElement.scrollTop > 100) {
-        document.querySelector('.go-top-container').classList.add('show');
-    } else {
-        document.querySelector('.go-top-container').classList.remove('show');
-    }
-};
+/*===== Mostrar/Ocultar el menú al hacer clic en el ícono de hamburguesa =====*/
+hamburgerBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active'); // Mostrar/Ocultar menú
+});
 
-document.querySelector('.go-top-container').addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+/*===== Cerrar el menú hamburguesa después de hacer clic en un enlace =====*/
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active'); // Cerrar el menú
     });
 });

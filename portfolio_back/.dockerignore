@@ -20,6 +20,7 @@ Dockerfile
 Thumbs.db
 docker-compose_dev.yml
 docker-compose.yml
+*_disable
 
 # Ignora otros archivos innecesarios
 node_modules/

@@ -40,8 +40,8 @@
     },
     "proyectos": {
         "title": "Projects",
-        "title-proyecto1": "Portfolio",
-        "info-proyecto1": "My personal web portfolio..."
+        "title-proyecto1": "portfolio-front",
+        "info-proyecto1": "My personal web portfolio-front..."
     },
     "contacto": {
         "title": "Contact",

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portafolio | Alejandro Villalba DevOps">
     <meta name="robots" content="index,follow">
-
     <title data-section="home" data-value="home_text-2"></title>
 
     <!-- Librerías -->
@@ -15,10 +15,8 @@
     <!-- Hojas de estilo -->
     <link rel="stylesheet" href="./assets/stylesheet/loader.css">
     <link rel="stylesheet" href="./assets/stylesheet/index.css">
-    <link rel="stylesheet" href="./assets/stylesheet/mobile.css"> 
-    <link rel="stylesheet" href="./assets/stylesheet/tablet.css">
-    <link rel="stylesheet" href="./assets/stylesheet/desktop.css">    
-    
+    <link rel="stylesheet" href="./assets/stylesheet/mobile.css" media="screen and (max-width: 768px)">
+
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,15 +34,22 @@
         <div class="loader"></div>
     </div>
 
+    <!-- Botón Hamburguesa -->
+    <div id="hamburger-btn" class="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
     <header class="header">
-        <img src="./assets/images/logo-ma.png" alt="Logo Portafolio" class="logo__header">
+        <img src="./assets/images/favicon.png" alt="Logo Portafolio" class="logo__header">
 
         <nav class="nav_menu not-active">
-            <a href="#home" class="active" data-section="menu" data-value="item1"></a>
-            <a href="#sobreMi" data-section="menu" data-value="item2"></a>
-            <a href="#habilidades" data-section="menu" data-value="item3"></a>
-            <a href="#proyectos" data-section="menu" data-value="item4"></a>
-            <a href="#contacto" data-section="menu" data-value="item5"></a>
+            <a href="#home" class="active" data-section="menu" data-value="item1">Inicio</a>
+            <a href="#sobreMi" data-section="menu" data-value="item2">Sobre mí</a>
+            <a href="#habilidades" data-section="menu" data-value="item3">Habilidades</a>
+            <a href="#proyectos" data-section="menu" data-value="item4">Proyectos</a>
+            <a href="#contacto" data-section="menu" data-value="item5">Contacto</a>
 
             <!-- Idiomas de la página -->
             <div id="flags" class="flags">
@@ -56,38 +61,32 @@
                 </div>
             </div>
         </nav>
-
-        <div id="button" class="btn not-active">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
     </header>
 
     <main>
-        <!-- Home -->        
+        <!-- Home -->
         <section class="home" id="home">
             <picture class="container_image-home" data-aos="zoom-in">
                 <img class="image_home" src="./assets/images/image-home.png" alt="Ilustración">
             </picture>
-            
+
             <div class="home_info">
                 <div class="container_text-info">
                     <p class="home_text-1" data-section="home" data-value="home_text-1"></p>
                     <p class="home_text-2" data-section="home" data-value="home_text-2"></p>
                 </div>
-        
+
                 <div class="texto_bash">
                     <p class="direccion_bash">
-                        <span class="user-info">alejandro@kali</span> 
-                        <span class="dir-info">~/portafolio</span> 
+                        <span class="user-info">alejandro@kali</span>
+                        <span class="dir-info">~/portafolio</span>
                         <span class="branch-status">(main)</span><span class="t-caret_bash">•</span>
                     </p>
                     <p class="descripcion_bash">
                         <span id="typewriter_bash"></span>
                     </p>
-                </div>                       
-        
+                </div>
+
                 <div class="container_button">
                     <a id="cv-link" href="" target="_blank">
                         <button class="cv_button" data-section="home" data-value="cv_button"></button>
@@ -97,7 +96,7 @@
                     </a>
                 </div>
             </div>
-        
+
             <div class="links">
                 <a href="https://www.linkedin.com/in/avillalba96/" target="_blank">
                     <img src="./assets/images/icon-linkedin.png" alt="LinkedIn" class="icon-linkedin">
@@ -106,7 +105,7 @@
                     <img src="./assets/images/icon-github.png" alt="GitHub" class="icon-github">
                 </a>
             </div>
-        </section>        
+        </section>
 
         <!-- Sobre mí -->
         <section class="sobreMi" id="sobreMi">
@@ -116,17 +115,13 @@
                 <div class="container_texto-sobreMi">
                     <span class="title_sobreMi" data-section="sobre-mi" data-value="texto_sobreMi"></span>
                 </div>
-    
-                <picture class="container_image-sobreMi">
-                    <img class="image_sobreMi" src="./assets/images/image-sobreMi.png" alt="Ilustración">
-                </picture>
             </div>
         </section>
-        
+
         <!-- Habilidades -->
         <section class="habilidades" id="habilidades">
             <h1 data-section="habilidades" data-value="title" data-aos="fade-up"></h1>
-        
+
             <div class="cards_container--habilidades">
                 <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
                     <img src="https://skillicons.dev/icons?i=linux" alt="Linux">
@@ -192,6 +187,7 @@
                     <img src="https://skillicons.dev/icons?i=linux" alt="Pentesting">
                     <p data-section="habilidades" data-value="skill16"></p>
                 </div>
+
             </div>
         </section>
 
@@ -200,11 +196,10 @@
             <h1 data-section="proyectos" data-value="title" data-aos="fade-up"></h1>
 
             <div class="cards_container--proyectos">
-                <div class="cards--proyectos card_portafolio" data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
+                <div class="cards--proyectos card_portafolio" data-aos="zoom-in-up">
                     <div class="container_imgCard--proyectos">
                         <img src="./assets/images/cap-portafolio.png" alt="Proyecto: Portafolio">
                     </div>
-
                     <div class="container_textCard--proyectos text-portafolio">
                         <h2 data-section="proyectos" data-value="title-proyecto1"></h2>
                         <p data-section="proyectos" data-value="info-proyecto1"></p>
@@ -219,37 +214,42 @@
 
                         <a href="https://github.com/avillalba96/docker-portafolio" target="_blank">
                             <button class="btn_repo">
-                                <img src="./assets/images/icon-githubProyecto.png" alt="Repositorio de github">REPO
+                                <img src="./assets/images/icon-github.png" alt="Repositorio de github">REPO
                             </button>
                         </a>
                     </div>
                 </div>
-            </div> 
+            </div>
         </section>
 
         <!-- Contacto -->
         <section class="contacto" id="contacto">
             <h1 data-section="contacto" data-value="title" data-aos="fade-up"></h1>
-        
-            <div class="container_box--contacto" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+
+            <div class="container_box--contacto" data-aos="fade-up">
                 <div class="container--contacto">
                     <div class="container_text--contacto">
                         <p data-section="contacto" data-value="text"></p>
                     </div>
-        
-                    <form id="form" class="form-contact" name="contacto-portafolio" netlify>
-                        <input id="nombre" type="text" name="name" data-section="contacto" data-value="placeholder-name" required>
-                        <input id="email" type="email" name="email" data-section="contacto" data-value="placeholder-email" required>
-                        <input id="asunto" type="text" name="affair" data-section="contacto" data-value="placeholder-subject" required>
-                        <textarea id="mensaje" cols="20" rows="4" name="message" data-section="contacto" data-value="placeholder-message" required></textarea>
-                    
+
+                    <form id="form" class="form-contact" name="contacto-portafolio">
+                        <input id="nombre" type="text" name="name" data-section="contacto" data-value="placeholder-name"
+                            required>
+                        <input id="email" type="email" name="email" data-section="contacto"
+                            data-value="placeholder-email" required>
+                        <input id="asunto" type="text" name="affair" data-section="contacto"
+                            data-value="placeholder-subject" required>
+                        <textarea id="mensaje" cols="20" rows="4" name="message" data-section="contacto"
+                            data-value="placeholder-message" required></textarea>
+
                         <div class="btn_form--contacto">
-                            <button id="btn-enviar" type="submit" data-section="contacto" data-value="btn-enviar">Enviar</button>
+                            <button id="btn-enviar" type="submit" data-section="contacto"
+                                data-value="btn-enviar">Enviar</button>
                         </div>
-                    </form>                                    
+                    </form>
                 </div>
             </div>
-        </section>        
+        </section>
     </main>
 
     <footer>
@@ -275,15 +275,44 @@
         </div>
     </div>
 
-    <!-- Archivo Js -->
+    <!-- Librerías de animaciones -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!-- Librería de animaciones -->
     <script>
         AOS.init();
     </script>
 
-    <!-- Mi script para cargar idiomas -->
+    <script>
+        document.getElementById('form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('asunto').value;
+            const message = document.getElementById('mensaje').value;
+
+            try {
+                const response = await fetch('/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email, subject, message }),
+                });
+
+                if (response.ok) {
+                    alert('Email sent successfully');
+                } else {
+                    alert('Failed to send email');
+                }
+            } catch (error) {
+                console.error('Failed to send email:', error);
+                alert('Failed to send email');
+            }
+        });
+    </script>
+
+    <!-- Script para manejar idiomas y otros -->
     <script src="./script.js"></script>
 </body>
+
 </html>

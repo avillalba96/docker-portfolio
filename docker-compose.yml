@@ -1,21 +1,49 @@
 version: '3.8'
 services:
-  portfolio:
-    image: nginx:alpine3.20-slim
-    container_name: portfolio
-    hostname: portfolio
+  portfolio-front:
+    build:
+      context: ./portfolio_front
+    container_name: portfolio-front
+    hostname: portfolio-front
     volumes:
-      - ${PWD}/nginx:/usr/share/nginx
+      - ${PWD}/portfolio_front/nginx:/usr/share/nginx
+    environment:
+      - PROXY_PASS=${PROXY_PASS}
+      - BACK_PORT=${BACK_PORT}
+      - PROXY_LOCATION=${PROXY_LOCATION}
+    networks:
+      - npm-network
     deploy:
       resources:
         limits:
           cpus: '2'
           memory: 512M
     restart: unless-stopped
+    
+  portfolio-back:
+    build:
+      context: ./portfolio_back
+    container_name: portfolio-back
+    hostname: portfolio-back
+    environment:
+      - BACK_PORT=${BACK_PORT:-3000}
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=${SMTP_PORT}
+      - TO_EMAIL=${TO_EMAIL}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+    volumes:
+      - ${PWD}/portfolio_back/server.js:/app/server.js
+    depends_on:
+      - portfolio-front
     networks:
       - npm-network
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 512M      
+    restart: unless-stopped
 
 networks:
   npm-network:
-    name: npm-network
     external: true

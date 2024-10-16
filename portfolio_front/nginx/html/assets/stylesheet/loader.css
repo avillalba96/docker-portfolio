@@ -13,8 +13,8 @@ html {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    z-index: 9999;
-    transition: all 1.5s;
+    z-index: 1000; /* Reducido a un valor más razonable */
+    transition: opacity 1.5s ease; /* Transición más específica para opacidad */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +31,7 @@ html {
 
 .loader {
     color: var(--beaver);
-    font-size: 13px;
+    font-size: 1.3rem; /* Consistente con otras unidades (rem) */
     position: relative;
     animation-delay: -0.16s;
 }
