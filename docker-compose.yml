@@ -5,8 +5,6 @@ services:
       context: ./portfolio_front
     container_name: portfolio-front
     hostname: portfolio-front
-    volumes:
-      - ${PWD}/portfolio_front/nginx:/usr/share/nginx
     environment:
       - PROXY_PASS=${PROXY_PASS}
       - BACK_PORT=${BACK_PORT}
