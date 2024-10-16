@@ -31,8 +31,6 @@ services:
       - SMTP_PORT=${SMTP_PORT}
       - TO_EMAIL=${TO_EMAIL}
       - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
-    volumes:
-      - ${PWD}/portfolio_back/server.js:/app/server.js
     depends_on:
       - portfolio-front
     networks:
