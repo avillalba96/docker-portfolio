@@ -85,10 +85,10 @@ El proyecto está organizado de la siguiente manera:
    PROXY_PASS=http://portfolio-email_service:3000
    PROXY_LOCATION=/send-email
    PORTFOLIO_EMAIL_PORT=3000
-   SMTP_HOST=10.10.13.10
+   SMTP_HOST=localhost
    SMTP_PORT=2525
-   TO_EMAIL=avillalba96@outlook.com
-   ALLOWED_ORIGINS=http://localhost:8081,http://home.avillalba.com.ar,https://home.avillalba.com.ar
+   TO_EMAIL=example@example.com
+   ALLOWED_ORIGINS=http://localhost:8081
    ```
 
 3. Ejecuta el proyecto con Docker Compose:
