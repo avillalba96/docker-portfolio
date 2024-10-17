@@ -5,8 +5,6 @@ services:
       context: ./portfolio_front
     container_name: portfolio-front
     hostname: portfolio-front
-    env_file:
-      - /u/docker/docker-jenkins/jenkins-agent/workspace/CLIENT-avillalba/Enable/.env_portfolio    
     # environment:
     #   - PROXY_PASS=${PROXY_PASS}
     #   - BACK_PORT=${BACK_PORT}
@@ -25,8 +23,6 @@ services:
       context: ./portfolio_back
     container_name: portfolio-back
     hostname: portfolio-back
-    env_file:
-      - /u/docker/docker-jenkins/jenkins-agent/workspace/CLIENT-avillalba/Enable/.env_portfolio    
     # environment:
     #   - BACK_PORT=${BACK_PORT:-3000}
     #   - SMTP_HOST=${SMTP_HOST}

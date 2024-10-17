@@ -7,7 +7,7 @@ Este repositorio contiene un entorno completo para desplegar un portafolio perso
 ### 1. Docker y Docker Compose
 
 - **Docker**: Se utiliza para crear contenedores independientes que encapsulan la aplicación y sus dependencias, asegurando que el entorno de ejecución sea consistente.
-- **Docker Compose**: Permite orquestar múltiples contenedores en un solo archivo de configuración (`docker-compose_dev.yml`), facilitando la gestión de los servicios y sus interacciones.
+- **Docker Compose**: Permite orquestar múltiples contenedores en un solo archivo de configuración (`docker-compose.yml`), facilitando la gestión de los servicios y sus interacciones.
 
 ### 2. Nginx
 
@@ -22,34 +22,6 @@ Este repositorio contiene un entorno completo para desplegar un portafolio perso
 
 - La interfaz del portafolio está desarrollada con **HTML**, **CSS** y **JavaScript** para ofrecer una experiencia de usuario interactiva y visualmente atractiva.
 - Se utilizan bibliotecas de animación y fuentes web para mejorar el diseño del sitio.
-
-## Estructura del Repositorio
-
-El proyecto está organizado de la siguiente manera:
-
-```bash
-.
-├── LICENSE
-├── README.md
-├── docker-compose.yml
-├── docker-compose_dev.yml
-├── portfolio_back
-│   ├── Dockerfile
-│   ├── package.json
-│   └── server.js
-├── portfolio_front
-│   ├── Dockerfile
-│   └── nginx
-│       └── nginx.conf
-```
-
-- **docker-compose_dev.yml**: Archivo de configuración para el entorno de desarrollo, que orquesta los servicios del backend y frontend.
-- **portfolio_back/**: Contiene el backend del portafolio, implementado en Node.js.
-  - **Dockerfile**: Define la imagen de Docker para el backend.
-  - **server.js**: Código fuente del servidor Express.js que gestiona el envío de correos.
-- **portfolio_front/**: Contiene el frontend del portafolio.
-  - **Dockerfile**: Define la imagen de Docker para el frontend (Nginx).
-  - **nginx/nginx.conf**: Archivo de configuración de Nginx para servir los archivos estáticos y configurar el proxy inverso.
 
 ## Funcionalidades
 
@@ -94,7 +66,7 @@ El proyecto está organizado de la siguiente manera:
 3. Ejecuta el proyecto con Docker Compose:
 
    ```bash
-   docker-compose -f docker-compose_dev.yml up -d --build
+   docker-compose -f docker-compose.yml up -d --build
    ```
 
 4. Accede al portafolio en tu navegador:
@@ -108,5 +80,5 @@ El proyecto está organizado de la siguiente manera:
 Para detener los contenedores, ejecuta:
 
 ```bash
-docker-compose -f docker-compose_dev.yml down
+docker-compose -f docker-compose.yml down
 ```
