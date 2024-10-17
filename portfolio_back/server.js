@@ -23,18 +23,23 @@ app.use(bodyParser.json());
 app.post('/send-email', async (req, res) => {
     const { name, email, subject, message } = req.body;
 
+    // Configuración de nodemailer para Mailtrap
     let transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
         port: process.env.SMTP_PORT,
         secure: false,
+        auth: {
+            user: process.env.SMTP_USER.split(':')[0], // 'api' parte del usuario SMTP
+            pass: process.env.SMTP_USER.split(':')[1]  // Clave API de Mailtrap
+        }
     });
 
     try {
         let info = await transporter.sendMail({
-            from: email, 
+            from: process.env.MAIL_FROM, // Usar no-reply como remitente
             to: process.env.TO_EMAIL,
             subject: subject,
-            text: `Mensaje de ${name}: ${message}`,
+            text: `Mensaje de ${name} (${email}): ${message}`,
         });
 
         if (info.rejected.length > 0) {
@@ -47,7 +52,6 @@ app.post('/send-email', async (req, res) => {
         res.status(500).send('Failed to send email.');
     }
 });
-
 
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
