@@ -5,10 +5,10 @@ services:
       context: ./portfolio_front
     container_name: portfolio-front
     hostname: portfolio-front
-    # environment:
-    #   - PROXY_PASS=${PROXY_PASS}
-    #   - BACK_PORT=${BACK_PORT}
-    #   - PROXY_LOCATION=${PROXY_LOCATION}
+    environment:
+      - PROXY_PASS=${PROXY_PASS}
+      - BACK_PORT=${BACK_PORT}
+      - PROXY_LOCATION=${PROXY_LOCATION}
     networks:
       - npm-network
     deploy:
@@ -23,12 +23,12 @@ services:
       context: ./portfolio_back
     container_name: portfolio-back
     hostname: portfolio-back
-    # environment:
-    #   - BACK_PORT=${BACK_PORT:-3000}
-    #   - SMTP_HOST=${SMTP_HOST}
-    #   - SMTP_PORT=${SMTP_PORT}
-    #   - TO_EMAIL=${TO_EMAIL}
-    #   - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+    environment:
+      - BACK_PORT=${BACK_PORT:-3000}
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=${SMTP_PORT}
+      - TO_EMAIL=${TO_EMAIL}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
     depends_on:
       - portfolio-front
     networks:
