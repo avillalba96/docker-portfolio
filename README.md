@@ -46,34 +46,39 @@ Este repositorio contiene un entorno completo para desplegar un portafolio perso
 
 1. Clona el repositorio:
 
-   ```bash
-   git clone https://github.com/tu-usuario/docker-portfolio.git
-   cd docker-portfolio
-   ```
+```bash
+git clone https://github.com/tu-usuario/docker-portfolio.git
+cd docker-portfolio
+```
 
 2. Crea un archivo `.env` en la raíz del proyecto para definir las variables de entorno necesarias:
 
-   ```env
-   PROXY_PASS=http://portfolio-email_service:3000
-   PROXY_LOCATION=/send-email
-   PORTFOLIO_EMAIL_PORT=3000
-   SMTP_HOST=localhost
-   SMTP_PORT=2525
-   TO_EMAIL=example@example.com
-   ALLOWED_ORIGINS=http://localhost:8081
-   ```
+```env
+# portfolio-front
+PROXY_PASS=http://portfolio-back
+PROXY_LOCATION=/send-email
+
+# portfolio-back
+BACK_PORT=3000
+SMTP_HOST=xxxxxx
+SMTP_PORT=587
+SMTP_USER=xxxxxx:xxxxxx
+MAIL_FROM=nxxxxxx@example.com
+TO_EMAIL=xxxxxx@outlook.com
+ALLOWED_ORIGINS=http://localhost:8081
+```
 
 3. Ejecuta el proyecto con Docker Compose:
 
-   ```bash
-   docker-compose -f docker-compose.yml up -d --build
-   ```
+```bash
+docker-compose -f docker-compose.yml up -d --build
+```
 
 4. Accede al portafolio en tu navegador:
 
-   ```bash
-   http://localhost:8081
-   ```
+```bash
+http://localhost:8081
+```
 
 ### Apagar los Servicios
 

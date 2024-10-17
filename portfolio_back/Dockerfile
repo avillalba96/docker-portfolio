@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Instalar las dependencias y generar el package-lock.json
-RUN npm install cors
+RUN npm install cors rate-limiter-flexible
 
 # Copiar el resto de la aplicación
 COPY . .
