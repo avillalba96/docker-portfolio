@@ -1,14 +1,43 @@
-version: '3.8'
 services:
+  mail-service:
+    build:
+      context: ./mail_service
+    container_name: mail-service
+    hostname: mail-service
+    restart: unless-stopped
+    environment:
+      MAIL_SERVICE_PORT: ${MAIL_SERVICE_PORT:-3025}
+      MAIL_SERVICE_API_KEY: ${MAIL_SERVICE_API_KEY}
+      MAILTRAP_API_TOKEN: ${MAILTRAP_API_TOKEN:-}
+      MAILTRAP_API_URL: ${MAILTRAP_API_URL:-https://send.api.mailtrap.io/api/send}
+      MAIL_FROM_EMAIL: ${MAIL_FROM_EMAIL:-${MAIL_FROM}}
+      MAIL_FROM_NAME: ${MAIL_FROM_NAME:-Portfolio}
+      MAILTRAP_CATEGORY: ${MAILTRAP_CATEGORY:-portfolio}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_SECURE: ${SMTP_SECURE:-false}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      MAIL_FROM: ${MAIL_FROM:-}
+      DEFAULT_TO_EMAIL: ${TO_EMAIL}
+    networks:
+      - npm-network
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 128M
+
   portfolio-front:
     build:
       context: ./portfolio_front
     container_name: portfolio-front
     hostname: portfolio-front
+    restart: unless-stopped
     environment:
-      - PROXY_PASS=${PROXY_PASS}
-      - PROXY_LOCATION=${PROXY_LOCATION}
-      - BACK_PORT=${BACK_PORT}
+      PROXY_PASS: ${PROXY_PASS}
+      PROXY_LOCATION: ${PROXY_LOCATION}
+      BACK_PORT: ${BACK_PORT}
     networks:
       - npm-network
     deploy:
@@ -16,22 +45,21 @@ services:
         limits:
           cpus: '2'
           memory: 512M
-    restart: unless-stopped
 
   portfolio-back:
     build:
       context: ./portfolio_back
     container_name: portfolio-back
     hostname: portfolio-back
+    restart: unless-stopped
     environment:
-      - BACK_PORT=${BACK_PORT:-3000}
-      - SMTP_HOST=${SMTP_HOST}
-      - SMTP_PORT=${SMTP_PORT}
-      - SMTP_USER=${SMTP_USER}
-      - MAIL_FROM=${MAIL_FROM}
-      - TO_EMAIL=${TO_EMAIL}
-      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+      BACK_PORT: ${BACK_PORT:-3000}
+      MAIL_SERVICE_URL: ${MAIL_SERVICE_URL:-http://mail-service:3025}
+      MAIL_SERVICE_API_KEY: ${MAIL_SERVICE_API_KEY}
+      TO_EMAIL: ${TO_EMAIL}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS}
     depends_on:
+      - mail-service
       - portfolio-front
     networks:
       - npm-network
@@ -39,9 +67,9 @@ services:
       resources:
         limits:
           cpus: '2'
-          memory: 512M      
-    restart: unless-stopped
+          memory: 512M
 
 networks:
   npm-network:
+    name: npm-network
     external: true

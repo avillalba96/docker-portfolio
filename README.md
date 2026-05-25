@@ -1,89 +1,67 @@
-# Docker Portfolio
+# docker-portfolio
 
-Este repositorio contiene un entorno completo para desplegar un portafolio personal utilizando Docker. Está compuesto por dos servicios principales: el backend para gestionar el envío de correos electrónicos y el frontend que sirve la interfaz del portafolio. Ambos servicios están orquestados utilizando Docker Compose.
+Sitio web personal (**avillalba.com.ar**) en Docker: frontend estático, API de contacto y envío de correo vía **Mailtrap** (dominio verificado).
 
-## Tecnologías Utilizadas
+## Arquitectura
 
-### 1. Docker y Docker Compose
+```
+Visitante (navegador)
+    → portfolio-front (Nginx + HTML/JS)
+    → portfolio-back (Express, CORS, límites de envío)
+    → mail-service (API interna, credenciales Mailtrap)
+    → Mailtrap Email Sending
+    → tu bandeja (TO_EMAIL)
+```
 
-- **Docker**: Se utiliza para crear contenedores independientes que encapsulan la aplicación y sus dependencias, asegurando que el entorno de ejecución sea consistente.
-- **Docker Compose**: Permite orquestar múltiples contenedores en un solo archivo de configuración (`docker-compose.yml`), facilitando la gestión de los servicios y sus interacciones.
+| Servicio | Qué hace | Público en Git |
+|----------|----------|----------------|
+| **portfolio-front** | Sitio web + proxy `/send-email` | Sí |
+| **portfolio-back** | Valida origen y reenvía al mail-service | Sí |
+| **mail-service** | Llama a Mailtrap; **no** expone SMTP al mundo | Sí (sin secretos) |
 
-### 2. Nginx
+Los secretos van en `.env` / `.env_portfolio` (ver `.env_example`). **No** subas tokens a GitHub.
 
-- **Nginx** actúa como un servidor web para el frontend, sirviendo los archivos estáticos y funcionando como un proxy inverso para redirigir las solicitudes de correo electrónico al backend.
+## Correo del formulario de contacto
 
-### 3. Node.js
+| Campo | Valor típico |
+|-------|----------------|
+| **De (From)** | `no-reply@avillalba.com.ar` — remitente verificado en Mailtrap |
+| **Para (To)** | Tu correo (`TO_EMAIL`, ej. Outlook) |
+| **Reply-To** | Email que escribe quien usa el formulario |
 
-- El backend está construido con **Node.js**, utilizando el framework **Express.js** para gestionar las rutas y procesar las solicitudes de envío de correo.
-- **Nodemailer** se usa en el backend para enviar correos electrónicos a través de un servidor SMTP.
+El remitente es `no-reply@` porque es un envío automático del sitio, no una casilla personal.
 
-### 4. HTML, CSS y JavaScript
+**Asunto y cuerpo:** el backend antepone `[Portfolio]` al asunto y abre el mensaje indicando que proviene del formulario de contacto del sitio (no es un mail personal tuyo). El nombre del remitente en Mailtrap suele ser `Portfolio · avillalba.com.ar` (`MAIL_FROM_NAME`).
 
-- La interfaz del portafolio está desarrollada con **HTML**, **CSS** y **JavaScript** para ofrecer una experiencia de usuario interactiva y visualmente atractiva.
-- Se utilizan bibliotecas de animación y fuentes web para mejorar el diseño del sitio.
-
-## Funcionalidades
-
-### 1. Portafolio Personal (Frontend)
-
-- Sirve una página web estática con la información del portafolio personal.
-- Incluye secciones como "Sobre mí", "Habilidades", "Proyectos" y "Contacto".
-- Implementa un formulario de contacto que permite a los usuarios enviar mensajes.
-
-### 2. Servicio de Envío de Correos (Backend)
-
-- Gestiona las solicitudes de envío de correos provenientes del formulario de contacto en el frontend.
-- Utiliza **Nodemailer** para enviar correos electrónicos configurados con un servidor SMTP.
-
-## Instalación y Uso
-
-### Requisitos Previos
-
-- Tener **Docker** y **Docker Compose** instalados en tu sistema.
-
-### Pasos para Ejecutar el Proyecto
-
-1. Clona el repositorio:
+## Inicio rápido
 
 ```bash
-git clone https://github.com/tu-usuario/docker-portfolio.git
+git clone https://github.com/avillalba96/docker-portfolio.git
 cd docker-portfolio
+cp .env_example .env
+# Editar .env: MAILTRAP_API_TOKEN, MAIL_SERVICE_API_KEY, TO_EMAIL, ALLOWED_ORIGINS
+docker compose up -d --build
 ```
 
-2. Crea un archivo `.env` en la raíz del proyecto para definir las variables de entorno necesarias:
+Sitio detrás de reverse proxy (ej. NPM) en `https://avillalba.com.ar`. CORS debe incluir esa URL en `ALLOWED_ORIGINS`.
 
-```env
-# portfolio-front
-PROXY_PASS=http://portfolio-back
-PROXY_LOCATION=/send-email
+## Variables principales
 
-# portfolio-back
-BACK_PORT=3000
-SMTP_HOST=xxxxxx
-SMTP_PORT=587
-SMTP_USER=xxxxxx:xxxxxx
-MAIL_FROM=nxxxxxx@example.com
-TO_EMAIL=xxxxxx@outlook.com
-ALLOWED_ORIGINS=http://localhost:8081
-```
+Ver [`.env_example`](.env_example).
 
-3. Ejecuta el proyecto con Docker Compose:
+- **Mailtrap (envío real):** [docs/MAILTRAP-SETUP.md](docs/MAILTRAP-SETUP.md) — cómo crear el API Token.
+- **Arquitectura de correo:** [docs/SMTP-RELAY.md](docs/SMTP-RELAY.md).
+- **Script desde otros servidores:** [scripts/send-mail.sh](scripts/send-mail.sh).
 
-```bash
-docker-compose -f docker-compose.yml up -d --build
-```
+## Jenkins / CI
 
-4. Accede al portafolio en tu navegador:
+En CI el `.env` suele vivir un nivel arriba del clone (`../.env_portfolio`). Plantilla en el repo [docker-jenkins](https://github.com/avillalba96/docker-jenkins) → `examples/portfolio/`.
 
-```bash
-http://localhost:8081
-```
+## Tecnologías
 
-### Apagar los Servicios
+- Docker Compose, Nginx, Node.js (Express), HTML/CSS/JS
+- Mailtrap Email Sending API (dominio `avillalba.com.ar` en Cloudflare)
 
-Para detener los contenedores, ejecuta:
+## Licencia
 
-```bash
-docker-compose -f docker-compose.yml down
-```
+MIT — ver [LICENSE](LICENSE).
