@@ -39,7 +39,7 @@
     },
     "sobre-mi": {
         "title": "About me",
-        "texto_sobreMi": "<p>I'm <strong>DevSecOps</strong> with 7 years in infrastructure and secure operations. I started in <strong>on-prem</strong> environments — virtualization, networking, firewalls, Linux/Windows server operations — and added cloud, CI/CD, containers and security across hybrid setups.</p><p>I apply hardening, IAM/RBAC, pipeline security scanning, vulnerability assessments, pentesting and threat-oriented monitoring. I automate with <strong>Python, Bash and agentic AI (LLM APIs)</strong> for log analysis and security workflows.</p><p>My focus is growing into <strong>Security Engineer</strong> and <strong>Cloud Security</strong>.</p><p><strong>Study roadmap</strong></p><ol><li>AWS Cloud Practitioner</li><li>Offensive Security Pentesting &amp; Red Teaming — Ekoparty Hackademy</li><li>AWS Solutions Architect Associate</li><li>AWS Certified Security – Specialty</li></ol>"
+        "texto_sobreMi": "<p>I'm <strong>DevSecOps</strong> with 7 years in infrastructure and secure operations. I started in <strong>on-prem</strong> environments — virtualization, networking, firewalls, Linux/Windows server operations — and added cloud, CI/CD, containers and security across hybrid setups.</p><p>I apply hardening, IAM/RBAC, pipeline security scanning, vulnerability assessments, pentesting and threat-oriented monitoring. I automate with <strong>Python, Bash and agentic AI (LLM APIs)</strong> for log analysis and security workflows.</p><p>I'm specializing toward <strong>Security Engineer</strong>, focused on cloud security, hardening and security operations in production.</p>"
     },
     "experiencia": {
         "title": "Work experience",
