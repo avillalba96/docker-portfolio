@@ -1,0 +1,14 @@
+{
+  "name": "mail-service",
+  "version": "1.0.0",
+  "description": "Envío de correo vía Mailtrap API o SMTP",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemailer": "^6.10.0"
+  },
+  "license": "MIT"
+}

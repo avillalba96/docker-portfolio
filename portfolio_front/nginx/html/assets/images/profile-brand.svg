@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" role="img" aria-label="Alejandro Villalba · DevSecOps">
+  <defs>
+    <linearGradient id="shield-lg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+    <linearGradient id="card-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="480" rx="16" fill="url(#card-bg)" stroke="rgba(34,211,238,0.35)" stroke-width="2"/>
+  <rect x="0" y="0" width="400" height="44" rx="16" fill="#12151a"/>
+  <rect x="0" y="28" width="400" height="16" fill="#12151a"/>
+  <circle cx="28" cy="22" r="6" fill="#ff5f57"/>
+  <circle cx="48" cy="22" r="6" fill="#febc2e"/>
+  <circle cx="68" cy="22" r="6" fill="#28c840"/>
+  <text x="92" y="27" fill="#94a3b8" font-family="monospace" font-size="14">devsecops  profile</text>
+  <g transform="translate(200 210)">
+    <path fill="url(#shield-lg)" transform="translate(-72 -80) scale(2.25)" d="M32 8 48 16v16c0 10-7 18-16 22-9-4-16-12-16-22V16l16-8z"/>
+    <path fill="#0f172a" transform="translate(-72 -80) scale(2.25)" d="M32 18a6 6 0 0 1 6 6v2h-2v-2a4 4 0 0 0-8 0v6a4 4 0 0 0 4 4h2a4 4 0 0 0 4-4v-1h2v1a6 6 0 0 1-6 6h-2a6 6 0 0 1-6-6v-6a6 6 0 0 1 6-6z"/>
+  </g>
+  <text x="200" y="320" fill="#f8fafc" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="700">Alejandro Villalba</text>
+  <text x="200" y="352" fill="#22d3ee" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" letter-spacing="1">DevSecOps · Security</text>
+  <text x="200" y="382" fill="#94a3b8" text-anchor="middle" font-family="monospace" font-size="13">Argentina</text>
+  <rect x="60" y="410" width="280" height="36" rx="8" fill="rgba(6,182,212,0.12)" stroke="rgba(34,211,238,0.3)"/>
+  <text x="200" y="433" fill="#06b6d4" text-anchor="middle" font-family="monospace" font-size="12">secure infra · cloud · automation</text>
+</svg>

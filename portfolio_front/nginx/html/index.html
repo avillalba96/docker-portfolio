@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alejandro Villalba · DevSecOps · AI-powered Security · Cybersecurity · AWS · Pentesting · CI/CD · Argentina">
+    <meta name="robots" content="index,follow">
+    <title data-section="home" data-value="home_text-2"></title>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/stylesheet/loader.css?v=2.8.3">
+    <link rel="stylesheet" href="./assets/stylesheet/index.css?v=2.8.3">
+    <link rel="stylesheet" href="./assets/stylesheet/mobile.css?v=2.8.3" media="screen and (max-width: 768px)">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/ae0fd6f99f.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="./assets/images/favicon.svg?v=2.8.3" type="image/svg+xml">
+    <link rel="shortcut icon" href="./assets/images/favicon.svg?v=2.8.3" type="image/svg+xml">
+    <script src="./version.js?v=2.8.3"></script>
+</head>
+
+<body>
+    <div class="container--loader">
+        <div class="loader"></div>
+    </div>
+
+    <div id="hamburger-btn" class="hamburger-btn" aria-label="Menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <header class="header">
+        <a href="#home" class="logo-link" aria-label="Inicio">
+            <img src="./assets/images/favicon.svg?v=2.8.3" alt="Logo" class="logo__header">
+        </a>
+
+        <nav class="nav_menu not-active" id="nav-menu">
+            <a href="#home" class="active" data-section="menu" data-value="item1">Inicio</a>
+            <a href="#sobreMi" data-section="menu" data-value="item2">Sobre mí</a>
+            <a href="#experiencia" data-section="menu" data-value="item3">Experiencia</a>
+            <a href="#habilidades" data-section="menu" data-value="item4">Stack</a>
+            <a href="#proyectos" data-section="menu" data-value="item5">Proyectos</a>
+            <a href="#contacto" data-section="menu" data-value="item6">Contacto</a>
+
+            <div class="lang-switcher" role="group" aria-label="Idioma / Language">
+                <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+                <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="site-main">
+        <section class="home" id="home">
+            <div class="home-inner">
+                <div class="profile-showcase" data-aos="zoom-in">
+                    <div class="profile-frame">
+                        <div class="profile-card">
+                            <div class="profile-card__bar">
+                                <span class="terminal-dot terminal-dot--red"></span>
+                                <span class="terminal-dot terminal-dot--yellow"></span>
+                                <span class="terminal-dot terminal-dot--green"></span>
+                            </div>
+                            <img src="./assets/images/favicon.svg?v=2.8.3" alt="" class="profile-card__logo" width="120" height="120">
+                            <p class="profile-card__name">Alejandro Villalba</p>
+                            <p class="profile-card__role" data-section="home" data-value="profile-role">DevSecOps</p>
+                            <p class="profile-card__tag" data-section="home" data-value="profile-tag">Security-first · Cloud &amp; On-prem</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="home_info">
+                    <div class="container_text-info">
+                        <p class="home_text-1" data-section="home" data-value="home_text-1"></p>
+                        <p class="home_text-2" data-section="home" data-value="home_text-2"></p>
+                        <p class="home_text-3" data-section="home" data-value="home_text-3"></p>
+                    </div>
+
+                    <div class="texto_bash">
+                        <div class="terminal-bar">
+                            <span class="terminal-dot terminal-dot--red"></span>
+                            <span class="terminal-dot terminal-dot--yellow"></span>
+                            <span class="terminal-dot terminal-dot--green"></span>
+                            <span class="terminal-title" id="terminal-title">bash — portafolio</span>
+                        </div>
+                        <p class="direccion_bash">
+                            <span class="user-info">alejandro@devsecops</span>:<span class="dir-info" id="terminal-path">~/devsecops-lab</span><span class="branch-status"> (main)</span>
+                        </p>
+                        <div class="terminal-body">
+                            <div id="terminal-output" class="terminal-output"></div>
+                            <div class="terminal-active-line">
+                                <span class="terminal-prompt">$ </span><span id="terminal-cursor-line"></span><span class="terminal-cursor" aria-hidden="true">▋</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container_button">
+                        <a id="cv-link" href="" target="_blank" rel="noopener noreferrer">
+                            <button type="button" class="cv_button" data-section="home" data-value="cv_button"></button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="links">
+                    <a href="https://www.linkedin.com/in/avillalba96/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <img src="./assets/images/icon-linkedin.png" alt="LinkedIn" class="icon-linkedin">
+                    </a>
+                    <a href="https://github.com/avillalba96" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <img src="./assets/images/icon-github.png" alt="GitHub" class="icon-github">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="sobreMi" id="sobreMi">
+            <div class="section-inner">
+                <h1 data-section="sobre-mi" data-value="title" data-aos="fade-up"></h1>
+                <div class="container_content-sobreMi" data-aos="fade-up">
+                    <div class="container_texto-sobreMi">
+                        <div class="about-content" data-section="sobre-mi" data-value="texto_sobreMi"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experiencia" id="experiencia">
+            <div class="section-inner">
+                <h1 data-section="experiencia" data-value="title" data-aos="fade-up"></h1>
+                <div id="experience-root" class="experience-timeline"></div>
+            </div>
+        </section>
+
+        <section class="habilidades" id="habilidades">
+            <div class="section-inner">
+                <h1 data-section="habilidades" data-value="title" data-aos="fade-up"></h1>
+                <div id="skills-root"></div>
+            </div>
+        </section>
+
+        <section class="proyectos" id="proyectos">
+            <div class="section-inner">
+                <h1 data-section="proyectos" data-value="title" data-aos="fade-up"></h1>
+
+                <div class="cards_container--proyectos">
+                    <article class="cards--proyectos" data-aos="fade-up">
+                        <div class="container_imgCard--proyectos">
+                            <img src="./assets/images/cap-portafolio.png" alt="Portfolio DevSecOps">
+                        </div>
+                        <div class="container_textCard--proyectos">
+                            <h2 data-section="proyectos" data-value="title-proyecto1"></h2>
+                            <p data-section="proyectos" data-value="info-proyecto1"></p>
+                        </div>
+                        <div class="container_btn--proyectos">
+                            <a href="https://avillalba.com.ar/" target="_blank" rel="noopener noreferrer">
+                                <button type="button" class="btn_demo">
+                                    <img src="./assets/images/icon-demoProyecto.png" alt="">
+                                    <span data-section="proyectos" data-value="btn-demo">Ver demo</span>
+                                </button>
+                            </a>
+                            <a href="https://github.com/avillalba96/docker-portfolio" target="_blank" rel="noopener noreferrer">
+                                <button type="button" class="btn_repo">
+                                    <img src="./assets/images/icon-github.png" alt="">
+                                    <span data-section="proyectos" data-value="btn-repo">Código</span>
+                                </button>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="cards--proyectos" data-aos="fade-up">
+                        <div class="container_imgCard--proyectos project-thumb--placeholder">
+                            <i class="fas fa-th-large" aria-hidden="true"></i>
+                            <span>Homer</span>
+                        </div>
+                        <div class="container_textCard--proyectos">
+                            <h2 data-section="proyectos" data-value="title-proyecto2"></h2>
+                            <p data-section="proyectos" data-value="info-proyecto2"></p>
+                        </div>
+                        <div class="container_btn--proyectos">
+                            <a href="https://hm.avillalba.com.ar/" target="_blank" rel="noopener noreferrer">
+                                <button type="button" class="btn_demo">
+                                    <img src="./assets/images/icon-demoProyecto.png" alt="">
+                                    <span data-section="proyectos" data-value="btn-demo">Ver demo</span>
+                                </button>
+                            </a>
+                            <a href="https://github.com/avillalba96/docker-homer" target="_blank" rel="noopener noreferrer">
+                                <button type="button" class="btn_repo">
+                                    <img src="./assets/images/icon-github.png" alt="">
+                                    <span data-section="proyectos" data-value="btn-repo">Código</span>
+                                </button>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacto" id="contacto">
+            <div class="section-inner">
+                <h1 data-section="contacto" data-value="title" data-aos="fade-up"></h1>
+                <div class="container_box--contacto" data-aos="fade-up">
+                    <div class="container--contacto">
+                        <div class="container_text--contacto">
+                            <p data-section="contacto" data-value="text"></p>
+                        </div>
+                        <form id="form" class="form-contact" name="contacto-portafolio">
+                            <input id="nombre" type="text" name="name" data-section="contacto" data-value="placeholder-name" required>
+                            <input id="email" type="email" name="email" data-section="contacto" data-value="placeholder-email" required>
+                            <input id="asunto" type="text" name="affair" data-section="contacto" data-value="placeholder-subject" required>
+                            <textarea id="mensaje" cols="20" rows="4" name="message" data-section="contacto" data-value="placeholder-message" required></textarea>
+                            <div class="btn_form--contacto">
+                                <button id="btn-enviar" type="submit" data-section="contacto" data-value="btn-enviar">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contianer--footer section-inner">
+            <div class="container_redes-footer">
+                <a href="https://www.linkedin.com/in/avillalba96/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <img src="./assets/images/icon-linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/avillalba96" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <img src="./assets/images/icon-github.png" alt="GitHub">
+                </a>
+            </div>
+            <div class="container_text--footer">
+                <span data-section="footer" data-value="text-footer"></span>
+            </div>
+        </div>
+    </footer>
+
+    <div class="go-top-container">
+        <div class="go-top-button">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ once: true, disable: 'phone' });</script>
+    <script>
+        document.getElementById('form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const name = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('asunto').value;
+            const message = document.getElementById('mensaje').value;
+            try {
+                const response = await fetch('/send-email', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, subject, message }),
+                });
+                alert(window.getContactAlert?.(response.ok ? 'success' : 'error') || (response.ok ? 'OK' : 'Error'));
+            } catch (error) {
+                alert(window.getContactAlert?.('error') || 'Error');
+            }
+        });
+    </script>
+    <script src="./skills-data.js?v=2.8.3"></script>
+    <script src="./app.js?v=2.8.3"></script>
+</body>
+
+</html>

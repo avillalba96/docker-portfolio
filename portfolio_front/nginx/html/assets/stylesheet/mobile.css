@@ -1,0 +1,206 @@
+@media (max-width: 768px) {
+    html {
+        font-size: 58%
+    }
+
+    .section-inner {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem
+    }
+
+    .hamburger-btn {
+        display: block;
+        cursor: pointer;
+        position: fixed;
+        top: 18px;
+        right: 16px;
+        z-index: 1001;
+        padding: 8px;
+        background: rgba(15, 23, 42, 0.9);
+        border-radius: 8px;
+        border: 1px solid var(--border-subtle)
+    }
+
+    .hamburger-btn span {
+        display: block;
+        width: 26px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+        border-radius: 2px
+    }
+
+    .header {
+        padding: .8rem 1rem
+    }
+
+    .logo__header {
+        width: 3.6rem
+    }
+
+    .nav_menu {
+        display: none
+    }
+
+    .nav_menu.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(15, 23, 42, 0.98);
+        z-index: 1000;
+        padding: 5.5rem 1.5rem 2rem;
+        overflow-y: auto
+    }
+
+    .nav_menu.active a {
+        padding: 1.2rem;
+        font-size: 1.8rem;
+        width: 100%;
+        text-align: center
+    }
+
+    .nav_menu.active .lang-switcher {
+        margin: 2rem auto 0
+    }
+
+    .home {
+        min-height: auto;
+        padding: 0
+    }
+
+    .home-inner {
+        flex-direction: column;
+        padding: 5rem 1.25rem 2rem;
+        gap: 1.5rem
+    }
+
+    .profile-showcase,
+    .home_info,
+    .links {
+        flex: none;
+        width: 100%
+    }
+
+    .profile-frame {
+        width: min(100%, 260px);
+        margin: 0 auto
+    }
+
+    .container_text-info {
+        margin-top: 0;
+        align-items: center;
+        text-align: center;
+        width: 100%
+    }
+
+    .home_text-1 {
+        font-size: 2rem
+    }
+
+    .home_text-2 {
+        font-size: 3rem;
+        text-align: center
+    }
+
+    .home_text-3 {
+        font-size: 1.25rem;
+        text-align: center;
+        width: 100%
+    }
+
+    .texto_bash {
+        width: 100%;
+        max-width: none
+    }
+
+    .container_button {
+        display: flex;
+        justify-content: center;
+        width: 100%
+    }
+
+    .links {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 1rem 0 2rem
+    }
+
+    .links img {
+        width: 3.2rem;
+        margin: 0
+    }
+
+    .sobreMi h1,
+    .experiencia h1,
+    .habilidades h1,
+    .proyectos h1,
+    .contacto h1 {
+        padding-top: 4rem;
+        font-size: 2.2rem
+    }
+
+    .container_texto-sobreMi {
+        padding: 1.5rem
+    }
+
+    .about-content,
+    .about-content p {
+        font-size: 1.45rem !important
+    }
+
+    .cards_container--proyectos {
+        grid-template-columns: 1fr
+    }
+
+    .container_btn--proyectos {
+        flex-direction: column;
+        align-items: stretch;
+        gap: .75rem
+    }
+
+    .container_btn--proyectos a {
+        margin: 0;
+        width: 100%
+    }
+
+    .container_btn--proyectos button {
+        width: 100%;
+        min-width: 0
+    }
+
+    .cards_container--habilidades {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .85rem
+    }
+
+    .cards--habilidades {
+        min-height: 9.5rem
+    }
+
+    .cards--habilidades img,
+    .skill-fa-icon {
+        width: 3.4rem;
+        height: 3.4rem;
+        font-size: 1.6rem
+    }
+
+    .experience-card {
+        padding: 1.2rem 1.3rem
+    }
+
+    .go-top-container {
+        bottom: .75rem;
+        right: .75rem
+    }
+}
+
+@media (max-width: 380px) {
+    .cards_container--habilidades {
+        grid-template-columns: 1fr 1fr
+    }
+}

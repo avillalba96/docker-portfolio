@@ -1,0 +1,102 @@
+{
+    "menu": {
+        "item1": "Home",
+        "item2": "About me",
+        "item3": "Experience",
+        "item4": "Stack",
+        "item5": "Projects",
+        "item6": "Contact"
+    },
+    "home": {
+        "home_text-1": "Hi, I'm",
+        "home_text-2": "Alejandro Villalba",
+        "home_text-3": "DevSecOps · AI-powered Security · Cybersecurity",
+        "profile-role": "DevSecOps",
+        "profile-tag": "Security-first · Cloud & On-prem · Automation",
+        "cv_button": "Download CV",
+        "contact_button": "Contact me",
+        "cv_link": "https://drive.google.com/file/d/1oQJxS9UnntNnT_hqgCm-7cZlwYQ6_syi/view?usp=sharing",
+        "social-linkedin": "LinkedIn",
+        "social-github": "GitHub"
+    },
+    "terminal": {
+        "title": "bash — devsecops",
+        "path": "~/devsecops-lab",
+        "script": [
+            { "kind": "cmd", "text": "whoami" },
+            { "kind": "out", "text": "alejandro · devsecops · argentina" },
+            { "kind": "cmd", "text": "cat profile.txt" },
+            { "kind": "out", "text": "7y infra · on-prem + cloud · security-first" },
+            { "kind": "cmd", "text": "ls stack/" },
+            { "kind": "out", "text": "aws  k8s  terraform  sonarqube  trivy  nmap  burp" },
+            { "kind": "cmd", "text": "./scan-pipeline --dry-run" },
+            { "kind": "out", "text": "[OK] sast  [OK] deps  [OK] image scan  [OK] deploy" },
+            { "kind": "cmd", "text": "python ai_log_analyzer.py --tail 500" },
+            { "kind": "out", "text": "→ 2 anomalous events · correlation ready · alert sent", "pause": 650 },
+            { "kind": "cmd", "text": "echo $TARGET_ROLE" },
+            { "kind": "out", "text": "Security Engineer / Cloud Security" }
+        ]
+    },
+    "sobre-mi": {
+        "title": "About me",
+        "texto_sobreMi": "<p>I'm <strong>DevSecOps</strong> with 7 years in infrastructure and secure operations. I started in <strong>on-prem</strong> environments — virtualization, networking, firewalls, Linux/Windows server operations — and added cloud, CI/CD, containers and security across hybrid setups.</p><p>I apply hardening, IAM/RBAC, pipeline security scanning, vulnerability assessments, pentesting and threat-oriented monitoring. I automate with <strong>Python, Bash and agentic AI (LLM APIs)</strong> for log analysis and security workflows.</p><p>My focus is growing into <strong>Security Engineer</strong> and <strong>Cloud Security</strong>.</p><p><strong>Study roadmap</strong></p><ol><li>AWS Cloud Practitioner</li><li>Offensive Security Pentesting &amp; Red Teaming — Ekoparty Hackademy</li><li>AWS Solutions Architect Associate</li><li>AWS Certified Security – Specialty</li></ol>"
+    },
+    "experiencia": {
+        "title": "Work experience",
+        "items": [
+            {
+                "role": "DevOps & Cloud Engineer",
+                "company": "Peperina Software S.A.S.",
+                "location": "Córdoba, Argentina · Remote",
+                "period": "Apr 2023 – Present",
+                "url": "https://peperina.io/",
+                "tags": ["Docker", "Kubernetes", "Jenkins", "GitHub Actions", "Terraform", "CloudFormation", "AWS", "S3", "Grafana", "Logstash", "Elasticsearch", "Prometheus", "Python", "Bash"],
+                "summary": "I integrate Docker and Kubernetes to manage containers, ensuring application portability and scalability. I implement CI/CD pipelines with Jenkins and GitHub Actions to automate testing and deployments. I manage infrastructure with Terraform and AWS CloudFormation to maintain efficiency and security in cloud environments. I use Grafana, Logstash, Elasticsearch and Prometheus for monitoring and observability. I leverage Bash and Python in Linux environments to automate tasks and enhance operational efficiency throughout the development lifecycle."
+            },
+            {
+                "role": "Freelance DevOps | Security",
+                "company": "Independent professional",
+                "location": "Argentina · Remote",
+                "period": "Feb 2021 – Present",
+                "url": "",
+                "tags": ["DevSecOps", "Pentesting", "Nmap", "Masscan", "Burp Suite", "OWASP ZAP", "Wireshark", "Trivy", "Python", "LLM", "CI/CD"],
+                "summary": "Freelance security and infrastructure consulting for SMB clients in Argentina, focused on DevSecOps practices and security operations: security assessments and pentesting (Nmap/Masscan, Burp Suite/OWASP ZAP, Wireshark/tcpdump), hardening and operational security (controls on Linux/Windows, pfSense/iptables/Shorewall firewalls, least-privilege policies, secure VPNs), DevSecOps implementation (CI/CD with integrated security scanning, secure deployment automation, secrets management), secure infrastructure (Proxmox/VMware virtualization, anomaly-oriented monitoring, backup and incident recovery) and AI-powered automation with Python + LLM APIs."
+            },
+            {
+                "role": "Infrastructure Support",
+                "company": "Lunix S.R.L.",
+                "location": "Santa Fe, Argentina",
+                "period": "Dec 2018 – Apr 2023",
+                "url": "https://www.lunix.com.ar/",
+                "tags": ["Proxmox", "VMware", "500+ VMs", "pfSense", "MikroTik", "Cisco", "VLANs", "VPN", "Docker", "Zabbix", "Graylog"],
+                "summary": "I implemented and managed virtualized environments with Proxmox and VMware, administering 500+ Linux VMs in production. I configured routers, switches and firewalls (pfSense, MikroTik, Cisco), including VLANs, ACLs, VPNs, NAT and least-privilege firewall policies. I managed Docker containers with a focus on network security. I implemented monitoring with Zabbix and Graylog oriented toward security: failed login alerts, port scan detection, service anomalies and pfSense event correlation. I automated tasks with Bash, Python and PowerShell, and managed servers and storage (HP, Dell)."
+            }
+        ]
+    },
+    "habilidades": {
+        "title": "Tech stack"
+    },
+    "proyectos": {
+        "title": "Projects",
+        "title-proyecto1": "DevSecOps Portfolio",
+        "info-proyecto1": "Personal site with terminal aesthetic, contact form, Node.js API and Mailtrap mail-service. Jenkins CI/CD, Docker Compose, production homelab deployment.",
+        "title-proyecto2": "Homer — Homelab Dashboard",
+        "info-proyecto2": "Operations dashboard with links to monitoring (Uptime Kuma, Netdata), infrastructure (Proxmox, Jenkins) and homelab services. Docker deployment + CI/CD.",
+        "btn-demo": "Live demo",
+        "btn-repo": "Source"
+    },
+    "contacto": {
+        "title": "Contact",
+        "text": "Questions about DevSecOps, infrastructure or security. I'll get back to you soon.",
+        "placeholder-name": "Your name",
+        "placeholder-email": "Your email",
+        "placeholder-subject": "Subject",
+        "placeholder-message": "Write your message here",
+        "btn-enviar": "Send message",
+        "alert-success": "Message sent successfully. I'll reply soon.",
+        "alert-error": "Could not send the message. Please try again later."
+    },
+    "footer": {
+        "text-footer": "Copyright © 2026 | Alejandro Villalba · DevSecOps"
+    }
+}
