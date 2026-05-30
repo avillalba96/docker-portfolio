@@ -91,13 +91,14 @@ En **`es.json` / `en.json`**: agregá `title-proyecto3`, `info-proyecto3`, etc.,
 
 ## 6. Caché al refrescar
 
-Al publicar cambios de CSS/JS, subí el número en **`version.js`**:
+Al publicar cambios de CSS/JS, subí el número en **`version.js`** y, si cambiaste roadmap/experiencia/contenido, la fecha:
 
 ```javascript
-window.PORTFOLIO_VERSION = '2.4.1';  // incrementar
+window.PORTFOLIO_VERSION = '2.9.0';
+window.PORTFOLIO_LAST_UPDATED = '2026-05-30';  // YYYY-MM-DD
 ```
 
-Eso fuerza al navegador a cargar archivos nuevos. Los JSON de idioma ya se piden sin caché.
+La fecha se muestra en **Sobre mí** y en el **footer** (ES/EN automático). Eso fuerza al navegador a cargar archivos nuevos.
 
 ---
 
