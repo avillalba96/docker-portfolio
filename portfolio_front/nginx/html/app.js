@@ -291,6 +291,39 @@ function renderExperience(experiencia) {
     });
 }
 
+function updateLastUpdatedDisplay(lang) {
+    const iso = window.PORTFOLIO_LAST_UPDATED;
+    if (!iso) {
+        return;
+    }
+
+    const locale = lang === 'es' ? 'es-AR' : 'en-US';
+    const formatted = new Date(`${iso}T12:00:00`).toLocaleDateString(locale, {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+    });
+
+    const footerLabel = document.getElementById('last-updated-label');
+    const footerDate = document.getElementById('last-updated-date');
+    const sectionMeta = document.getElementById('site-last-updated');
+
+    if (footerLabel) {
+        footerLabel.textContent = lang === 'es' ? 'Información actualizada:' : 'Last updated:';
+    }
+
+    if (footerDate) {
+        footerDate.textContent = formatted;
+        footerDate.dateTime = iso;
+    }
+
+    if (sectionMeta) {
+        sectionMeta.textContent = lang === 'es'
+            ? `Última actualización de esta información: ${formatted}`
+            : `Last update of this information: ${formatted}`;
+    }
+}
+
 function applyStaticTranslations(texts) {
     textsToChange.forEach((element) => {
         const section = element.dataset.section;
@@ -353,6 +386,7 @@ async function setLanguage(requestedLang) {
 
         document.documentElement.lang = lang;
         updateLangSwitcher(lang);
+        updateLastUpdatedDisplay(lang);
         localStorage.setItem('language', lang);
     } catch (error) {
         console.error(`Error loading language "${lang}":`, error);

@@ -1268,6 +1268,26 @@ footer {
     color: #4285f4
 }
 
+.footer-updated,
+.site-meta-updated {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.15rem;
+    color: var(--light-grey);
+    letter-spacing: .03rem;
+    margin-top: .6rem
+}
+
+.footer-updated time,
+.site-meta-updated {
+    color: var(--accent-cyan)
+}
+
+.site-meta-updated {
+    margin-top: 1.4rem;
+    text-align: center;
+    font-style: italic
+}
+
 .container_text--footer img {
     width: 1.2rem;
     margin: 0 .2rem
