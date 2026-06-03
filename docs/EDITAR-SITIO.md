@@ -9,7 +9,7 @@ Todo el contenido visible se edita con **archivos de texto**. No hace falta pane
 | Textos en español (menú, home, sobre mí, experiencia, proyectos, contacto) | `portfolio_front/nginx/html/languages/es.json` |
 | Textos en inglés | `portfolio_front/nginx/html/languages/en.json` |
 | Stack tecnológico (iconos y nombres) | `portfolio_front/nginx/html/skills-data.js` |
-| Link del CV | `cv_link` dentro de `home` en `es.json` / `en.json` |
+| Link del CV | `cv_drive_id` (Google Drive) o `cv_path` (PDF en el repo) en `home` de `es.json` / `en.json` |
 | Tu foto | Subir `portfolio_front/nginx/html/assets/images/profile.jpg` |
 | Logo del sitio (pestaña del navegador) | `portfolio_front/nginx/html/assets/images/favicon.svg` |
 | Imagen del proyecto Portfolio | `assets/images/cap-portafolio.png` |
@@ -30,7 +30,8 @@ Misma estructura en ambos. Ejemplos:
 "home": {
   "home_text-1": "Hola, soy",
   "home_text-2": "Alejandro Villalba",
-  "cv_link": "https://drive.google.com/..."
+  "cv_drive_id": "1abc...xyz",
+  "cv_filename": "CV-Alejandro-Villalba.pdf"
 }
 ```
 
@@ -81,7 +82,53 @@ En **`es.json` / `en.json`**: agregá `title-proyecto3`, `info-proyecto3`, etc.,
 
 ---
 
-## 5. Foto personal
+## 5. CV (PDF) — Google Drive
+
+Archivos: **`languages/es.json`** y **`languages/en.json`**, clave `home`:
+
+```json
+"cv_drive_id": "1abc...xyz",
+"cv_filename": "CV-Alejandro-Villalba.pdf"
+```
+
+### Configuración inicial (una sola vez)
+
+1. Subí el PDF a **Google Drive**.
+2. Clic derecho → **Compartir** → **Cualquier persona con el enlace** (lector).
+3. Copiá el ID del enlace. Ejemplo:  
+   `https://drive.google.com/file/d/ **1abc...xyz** /view` → el ID es `1abc...xyz`.
+4. Pegalo en **`cv_drive_id`** (español e inglés, mismo valor).
+
+El botón usa descarga directa (`uc?export=download`), no la página `/view` de Drive.
+
+### Actualizar el CV sin tocar el sitio
+
+En Drive el enlace depende del **ID del archivo**, no del nombre del PDF.
+
+| Acción | ¿Sigue funcionando el botón? |
+|--------|------------------------------|
+| Mismo archivo → **Administrar versiones** → subir PDF nuevo | **Sí** (mismo `cv_drive_id`) |
+| Borrar el PDF y subir otro con el mismo nombre | **No** (nuevo ID → actualizá `cv_drive_id` una vez) |
+
+**Recomendado:** mantener un solo archivo fijo en Drive y reemplazar contenido con *Administrar versiones*.
+
+### Alternativa: PDF en el repo (sin Drive)
+
+1. Guardá el PDF como **`portfolio_front/nginx/html/assets/cv/cv.pdf`**.
+2. En `home` de ambos JSON:
+
+```json
+"cv_path": "./assets/cv/cv.pdf",
+"cv_filename": "CV-Alejandro-Villalba.pdf"
+```
+
+(Borrá o comentá `cv_drive_id` si usás `cv_path`.)
+
+3. Al cambiar el PDF: reemplazá el archivo y subí **`PORTFOLIO_VERSION`** en `version.js`.
+
+---
+
+## 6. Foto personal
 
 1. Guardá tu foto como **`assets/images/profile.jpg`** (JPG, ~400×500 px).
 2. Si existe, reemplaza el placeholder automáticamente.
@@ -89,7 +136,7 @@ En **`es.json` / `en.json`**: agregá `title-proyecto3`, `info-proyecto3`, etc.,
 
 ---
 
-## 6. Caché al refrescar
+## 7. Caché al refrescar
 
 Al publicar cambios de CSS/JS, subí el número en **`version.js`** y, si cambiaste roadmap/experiencia/contenido, la fecha:
 
@@ -102,7 +149,7 @@ La fecha se muestra en **Sobre mí** y en el **footer** (ES/EN automático). Eso
 
 ---
 
-## 7. Email (no tocar salvo correo)
+## 8. Email (no tocar salvo correo)
 
 El formato del mail (De del visitante, asunto `[Portfolio]`, cuerpo formateado) está en:
 
@@ -113,7 +160,7 @@ Secretos en `.env` del servidor (`MAILTRAP_API_TOKEN`, `TO_EMAIL`, etc.). Ver `d
 
 ---
 
-## 8. Despliegue
+## 9. Despliegue
 
 ```bash
 # Local / servidor con compose

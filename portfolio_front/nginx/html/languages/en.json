@@ -15,7 +15,8 @@
         "profile-tag": "Security-first · Cloud & On-prem · Automation",
         "cv_button": "Download CV",
         "contact_button": "Contact me",
-        "cv_link": "https://drive.google.com/file/d/1oQJxS9UnntNnT_hqgCm-7cZlwYQ6_syi/view?usp=sharing",
+        "cv_drive_id": "1oQJxS9UnntNnT_hqgCm-7cZlwYQ6_syi",
+        "cv_filename": "CV-Alejandro-Villalba.pdf",
         "social-linkedin": "LinkedIn",
         "social-github": "GitHub"
     },

@@ -77,6 +77,60 @@ function getTranslation(texts, section, value) {
     return sectionData[value];
 }
 
+/** ID de archivo Google Drive (no cambia si subís una versión nueva del mismo PDF). */
+function extractGoogleDriveFileId(home) {
+    if (home?.cv_drive_id) {
+        return String(home.cv_drive_id).trim();
+    }
+    const legacy = home?.cv_link || '';
+    const match = legacy.match(/\/d\/([a-zA-Z0-9_-]+)/);
+    return match ? match[1] : null;
+}
+
+function resolveCvDownload(home) {
+    const filename = home?.cv_filename || 'CV-Alejandro-Villalba.pdf';
+
+    if (home?.cv_path) {
+        return {
+            href: `${home.cv_path}?v=${APP_VERSION}`,
+            filename,
+            external: false,
+        };
+    }
+
+    const fileId = extractGoogleDriveFileId(home);
+    if (!fileId) {
+        return null;
+    }
+
+    return {
+        href: `https://drive.google.com/uc?export=download&id=${fileId}&confirm=t`,
+        filename,
+        external: true,
+    };
+}
+
+function applyCvLink(home) {
+    if (!cvLink || !home) {
+        return;
+    }
+
+    const cv = resolveCvDownload(home);
+    if (!cv) {
+        return;
+    }
+
+    cvLink.href = cv.href;
+    cvLink.setAttribute('download', cv.filename);
+    if (cv.external) {
+        cvLink.setAttribute('target', '_blank');
+        cvLink.setAttribute('rel', 'noopener noreferrer');
+    } else {
+        cvLink.removeAttribute('target');
+        cvLink.setAttribute('rel', 'noopener');
+    }
+}
+
 function updateLangSwitcher(lang) {
     langButtons.forEach((btn) => {
         btn.classList.toggle('active', btn.dataset.lang === lang);
@@ -343,9 +397,7 @@ function applyStaticTranslations(texts) {
         terminalPath.textContent = texts.terminal.path;
     }
 
-    if (texts.home?.cv_link && cvLink) {
-        cvLink.href = texts.home.cv_link;
-    }
+    applyCvLink(texts.home);
 
     if (texts.home?.['home_text-2']) {
         document.title = `${texts.home['home_text-2']} | DevSecOps`;
