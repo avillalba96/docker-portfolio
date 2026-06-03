@@ -306,7 +306,6 @@ function updateLastUpdatedDisplay(lang) {
 
     const footerLabel = document.getElementById('last-updated-label');
     const footerDate = document.getElementById('last-updated-date');
-    const sectionMeta = document.getElementById('site-last-updated');
 
     if (footerLabel) {
         footerLabel.textContent = lang === 'es' ? 'Información actualizada:' : 'Last updated:';
@@ -315,12 +314,6 @@ function updateLastUpdatedDisplay(lang) {
     if (footerDate) {
         footerDate.textContent = formatted;
         footerDate.dateTime = iso;
-    }
-
-    if (sectionMeta) {
-        sectionMeta.textContent = lang === 'es'
-            ? `Última actualización de esta información: ${formatted}`
-            : `Last update of this information: ${formatted}`;
     }
 }
 

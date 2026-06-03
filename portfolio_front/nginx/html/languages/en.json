@@ -39,7 +39,7 @@
     },
     "sobre-mi": {
         "title": "About me",
-        "texto_sobreMi": "<p>I'm <strong>DevSecOps</strong> with 7 years in infrastructure and secure operations. I started in <strong>on-prem</strong> environments — virtualization, networking, firewalls, Linux/Windows server operations — and added cloud, CI/CD, containers and security across hybrid setups.</p><p>I apply hardening, IAM/RBAC, pipeline security scanning, vulnerability assessments, pentesting and threat-oriented monitoring. I automate with <strong>Python, Bash and agentic AI (LLM APIs)</strong> for log analysis and security workflows.</p><p>I'm specializing toward <strong>Security Engineer</strong>, focused on cloud security, hardening and security operations in production.</p>"
+        "texto_sobreMi": "<p>DevSecOps with 7 years of experience in infrastructure and secure operations. I apply security at every layer: Linux/Windows system hardening, access control (IAM/RBAC), security scanning integrated into CI/CD pipelines, network segmentation, firewall configuration, and threat-detection-oriented monitoring.</p><p>Experienced in operating production environments on cloud (AWS) and on-premise with a security-first approach. I leverage agentic AI (Python + LLM APIs) to automate log analysis, anomaly detection, and real-time security workflows.</p><p>Hands-on experience in security assessments, pentesting, and vulnerability analysis for infrastructure hardening. Focused on transitioning into Security Engineer, Cloud Security, or DevSecOps roles within corporate environments.</p>"
     },
     "experiencia": {
         "title": "Work experience",
